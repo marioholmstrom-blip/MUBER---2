@@ -1,10 +1,17 @@
 # Skill: actualizar-trip-status
 
 ## Objetivo
-Cambiar estado de viaje y reflejarlo en todas las pantallas.
+Asegurar que el estado del viaje cambie correctamente y se vea bien en todas las capas.
+
+## Debe reflejar
+- Driver actualiza
+- Supabase guarda
+- historial registra
+- User y Assisted muestran estado claro
+- base lista para notificaciones futuras
 
 ## Pasos
 1. actualizar `trips.trip_status`
-2. registrar historial
-3. refrescar lectura en User y Assisted
-4. validar textos visibles
+2. escribir en `trip_status_history`
+3. validar lectura en pantalla
+4. comprobar coherencia operativa

@@ -1,11 +1,18 @@
 # Skill: cerrar-flujo-driver
 
 ## Objetivo
-Completar el flujo Driver desde aceptación hasta cambio de estados.
+Completar el flujo Driver desde aceptación hasta viaje ejecutado.
+
+## Debe ayudar a lograr
+- trip real
+- tracking real
+- estado final verificable
+- base para chofer real
 
 ## Pasos
-1. cargar requests
+1. cargar requests reales
 2. aceptar request
 3. crear trip
-4. avanzar trip_status
-5. reflejar tracking en usuario
+4. actualizar estados
+5. cerrar viaje
+6. verificar trazabilidad en Supabase

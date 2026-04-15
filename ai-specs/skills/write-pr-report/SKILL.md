@@ -1,11 +1,12 @@
 # Skill: write-pr-report
 
 ## Objetivo
-Escribir un resumen técnico claro del cambio realizado.
+Documentar el cambio técnico de forma útil para el proyecto real.
 
 ## Debe incluir
 - qué se cambió
-- por qué
-- tablas afectadas
-- pantallas afectadas
-- cómo verificar
+- por qué se cambió
+- qué flujo toca
+- cómo se verifica
+- cómo acerca al piloto real
+- si ayuda a viajes reales o ingresos reales
