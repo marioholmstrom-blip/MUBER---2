@@ -1,38 +1,45 @@
-# .cursor
-
-Punto de integración para Cursor. Debe reflejar agentes, commands y skills del sistema base.
 # MUBER 2
 
-MUBER 2 es una app de logística y mudanzas orientada a un piloto operativo real en Valparaíso y Viña del Mar.
+MUBER 2 es una plataforma digital de logística y mudanzas orientada a operación real, diseñada como un sistema inclusivo, responsivo, escalable e innovador.
 
-## Objetivo general
+## Definición del producto
 
-Construir una base sólida de producto, documentación, operación y desarrollo técnico para MUBER 2, inspirada en:
+MUBER 2 no es solo una app de logística operativa.
 
-- manual-SDD
-- ai-specs
-- OpenSpec
+MUBER 2 es una plataforma de mudanzas y última milla con dos capas integradas:
 
-Esta base debe vivir en dos lugares complementarios:
-
-- **GitHub** como repositorio técnico, documental y estructural
-- **Notion** como centro operativo, tablero documental y control del piloto
-
-## Objetivo del producto
-
-Validar una operación mínima real que permita:
-
-- crear solicitudes desde User
-- crear solicitudes desde Assisted
-- aceptar solicitudes desde Driver
-- crear trips reales
+### 1. Núcleo operativo
+Permite:
+- crear solicitudes
+- aceptar viajes
+- asignar conductor y vehículo
 - actualizar estados del viaje
-- reflejar tracking en pantallas
-- registrar operación y métricas del piloto
+- registrar trazabilidad
+- operar un piloto real
+
+### 2. Capa diferenciadora
+Incorpora:
+- accesibilidad universal
+- multiidioma
+- inventario
+- mapa y lógica de ruta
+- presupuesto y pricing
+- notificaciones
+- experiencia clara para usuarios con distintas necesidades
+
+## Visión
+
+MUBER 2 busca convertirse en una solución confiable para la planificación, organización y ejecución de mudanzas y traslados urbanos, con foco inicial en Valparaíso y Viña del Mar.
+
+La propuesta combina operación logística real con una experiencia pensada para:
+- adultos mayores
+- personas con discapacidad visual
+- usuarios con conectividad limitada
+- usuarios que requieren claridad, acompañamiento y confianza
 
 ## Estado actual del proyecto
 
-Actualmente MUBER 2 ya cuenta con:
+Actualmente MUBER 2 ya cuenta con una base funcional de piloto:
 
 - Home funcional
 - User conectado a Supabase
@@ -42,103 +49,90 @@ Actualmente MUBER 2 ya cuenta con:
 - trips reales
 - trip_status_history funcionando
 - tracking visible en User y Assisted
-- chofer y vehículo simulado visibles
-- chofer y vehículo simulado guardados en trips
-- estructura base del repositorio ya normalizada en GitHub
+- conductor y vehículo simulado visibles
+- conductor y vehículo simulado guardados en trips
 
-## Estructura base del repositorio
+## Base estratégica
 
-### `ai-specs/`
-Contiene reglas, agentes, comandos, skills y estándares del proyecto.
+La documentación de referencia del proyecto deja claro que:
 
-### `docs/`
-Contiene documentación técnica y operativa de MUBER 2.
+- MUBER tiene una propuesta de valor ligada a accesibilidad universal, experiencia inclusiva y multiidioma
+- el MVP debe priorizar funciones nucleares y verificables
+- Notion actúa como panel operativo y backoffice
+- la lógica real del sistema no debe depender de Notion
+- el proyecto necesita una estructura unificada entre producto, código, operación y documentación
 
-### `openspec/`
-Contiene specs vivas y cambios formales del proyecto.
-
-### Archivos raíz
-- `README.md`
-- `AGENTS.md`
-- `CLAUDE.md`
-- `codex.md`
-
-Estos archivos sirven como punto de entrada para copilotos, documentación rápida y contexto general del sistema.
-
-## Relación GitHub + Notion
+## Arquitectura general
 
 ### GitHub
 Se usa para:
-- estructura técnica
-- documentación versionada
+- estructura del repositorio
+- documentación técnica
 - reglas del proyecto
-- specs y cambios
-- referencia para copilotos
-- evolución ordenada del sistema
+- specs
+- changes
+- trazabilidad estructural
+
+### Supabase
+Se usa como backend operativo real del piloto.
 
 ### Notion
-Se usa para:
-- centro de operaciones
+Se usa como:
+- centro operativo
 - dashboard del piloto
-- métricas
-- visión ejecutiva
-- seguimiento diario
-- documentación de uso interno
-- coordinación del proyecto
+- backoffice humano
+- lectura de métricas
+- seguimiento ejecutivo
 
-## Stack actual
+## Ruta de 30 días
 
-- Expo
-- React Native
-- Supabase
-- GitHub
-- Notion
+La ruta de 30 días debe consolidar el MVP y preparar el piloto real sobre estas líneas:
 
-## Dominios principales del proyecto
-
-- requests
-- trips
+- accesibilidad
+- inventario
+- mapa / logística
+- presupuesto
+- notificaciones
 - tracking
-- inventory
-- payments
-- piloto operativo
-- métricas e ingresos
+- operación del piloto
 
-## Flujo funcional actual
+## Ejes del MVP
 
-1. User o Assisted crea una solicitud
-2. La solicitud se guarda en `requests`
-3. Driver carga solicitudes pendientes
-4. Driver acepta una solicitud
-5. Se crea un `trip`
-6. Se registra historial en `trip_status_history`
-7. User y Assisted muestran conductor asignado
-8. Driver puede avanzar el `trip_status`
-9. El tracking se refleja en pantallas
+### Accesibilidad
+La accesibilidad no es un extra. Es parte central de la identidad del producto.
+
+### Inventario
+El inventario es un diferenciador funcional y comercial del sistema.
+
+### Mapa y logística
+La experiencia debe avanzar hacia asignación, trazabilidad y lectura clara del recorrido.
+
+### Presupuesto
+El pricing debe ser entendible, verificable y operable.
+
+### Notificaciones
+Las notificaciones deben acompañar el estado del servicio y reducir incertidumbre.
 
 ## Principios de trabajo
 
-1. Primero definir estructura y reglas
-2. Luego implementar cambios pequeños
-3. Luego verificar en la app y en Supabase
-4. Luego documentar
-5. Todo cambio importante debe quedar trazado
-6. El piloto vale más que la sobreingeniería
-7. Claridad y operación real primero
+1. claridad antes que complejidad
+2. piloto funcional antes que sobreingeniería
+3. trazabilidad antes que supuestos
+4. documentación viva antes que documentación decorativa
+5. GitHub, Supabase y Notion deben responder a una misma lógica
 
-## Próximas líneas de trabajo
+## Estructura del repositorio
 
-- completar flujo real de estados del viaje
-- consolidar specs vivas en openspec
-- adaptar skills a tareas reales de MUBER
-- reflejar esta misma arquitectura en Notion
-- preparar operación del piloto de 30 días
+- `README.md`
+- `docs/`
+- `ai-specs/`
+- `openspec/`
 
-## Criterio de éxito
+## Objetivo inmediato
 
-La base estará bien construida si permite:
+Consolidar una base técnica y documental que permita:
 
-- desarrollar sin perder orden
-- documentar sin duplicación
-- operar el piloto con claridad
-- conectar producto, código, datos y operación en un solo sistema
+- seguir desarrollando sin perder orden
+- reflejar correctamente el material estratégico del proyecto
+- operar el piloto real
+- alinear GitHub con Notion y con el backend actual en Supabase

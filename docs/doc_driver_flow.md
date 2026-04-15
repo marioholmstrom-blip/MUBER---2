@@ -2,18 +2,24 @@
 
 ## Objetivo
 
-Definir el flujo actual de Driver dentro de MUBER 2.
+Definir el flujo actual del conductor dentro del piloto operativo de MUBER 2.
+
+## Rol de Driver
+
+Driver representa la capa operativa real del servicio.
+
+Es la pantalla que transforma una solicitud en un viaje ejecutable.
 
 ## Flujo actual
 
-1. Entrar a Driver
-2. Cambiar a en línea
-3. Cargar solicitudes pendientes
-4. Seleccionar solicitud
-5. Aceptar solicitud
-6. Crear trip real
-7. Actualizar estado del viaje
-8. Finalizar viaje
+1. entrar a Driver
+2. cambiar a en línea
+3. cargar solicitudes pendientes
+4. seleccionar solicitud
+5. aceptar solicitud
+6. crear trip real
+7. actualizar estado del viaje
+8. finalizar viaje
 
 ## Qué lee Driver
 
@@ -51,10 +57,20 @@ Desde `trips`:
 - in_progress
 - completed
 
-## Regla actual
+## Estado actual
 
-El conductor y el vehículo todavía son simulados, pero ya quedan guardados dentro de la tabla `trips`.
+Hoy Driver funciona como flujo operativo del piloto real.
 
-## Meta siguiente
+## Evolución esperada
 
-Pasar de conductor simulado a conductor real sin romper el flujo ya validado.
+Durante la ruta de 30 días, este flujo debe acercarse a:
+- mejor trazabilidad
+- mayor precisión operativa
+- integración futura con conductor real
+- lógica más clara de ruta y mapa
+- mejor integración con notificaciones y operación
+
+## Regla clave
+
+Driver no debe romper el flujo actual validado.  
+La evolución debe ser incremental y comprobable.

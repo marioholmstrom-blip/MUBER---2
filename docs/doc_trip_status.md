@@ -1,4 +1,3 @@
-
 # Trip status
 
 ## Objetivo
@@ -7,17 +6,17 @@ Definir la lógica del estado del viaje en MUBER 2.
 
 ## Fuente de verdad
 
-La fuente de verdad del tracking es:
+La fuente principal del estado actual del viaje es:
 
 - `trips.trip_status`
 
 ## Historial
 
-Cada cambio relevante del viaje debe quedar registrado en:
+La trazabilidad del cambio de estados vive en:
 
 - `trip_status_history`
 
-## Estados actuales técnicos
+## Estados técnicos actuales
 
 - `driver_assigned`
 - `en_camino`
@@ -35,12 +34,30 @@ Cada cambio relevante del viaje debe quedar registrado en:
 
 ## Regla de producto
 
-El usuario debe ver estados claros y entendibles.  
-La pantalla no debe mostrar estados técnicos sin contexto.
+Los estados visibles deben ser:
+- claros
+- entendibles
+- tranquilizadores
+- útiles para usuarios con distintos niveles de alfabetización digital
+
+## Relación con accesibilidad
+
+El tracking es una pieza crítica de confianza.
+
+Por eso debe evolucionar hacia:
+- mejor legibilidad
+- mensajes más directos
+- futura compatibilidad con voz y notificaciones
+- menor ambigüedad
 
 ## Regla técnica
 
-Cada actualización desde Driver debe:
-1. cambiar `trip_status`
-2. crear registro en `trip_status_history`
+Cada cambio de estado desde Driver debe:
+1. actualizar `trips.trip_status`
+2. registrar historial
 3. reflejarse en User y Assisted
+
+## Regla final
+
+El tracking no es solo una función técnica.
+Es una parte central de la promesa de confianza del producto.

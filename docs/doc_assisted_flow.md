@@ -2,27 +2,35 @@
 
 ## Objetivo
 
-Definir el flujo del servicio asistido dentro de MUBER 2.
+Definir el flujo del servicio asistido en MUBER 2.
 
-## Flujo actual
+## Sentido del flujo asistido
 
-1. Elegir tipo de ayuda
-2. Ingresar origen y destino
-3. Elegir método de inventario
-4. Revisar resumen y precio
-5. Solicitar viaje
-6. Ver tracking
+Assisted no es una variación menor de User.  
+Representa una capa estratégica del producto porque acerca MUBER a usuarios que necesitan:
+- más apoyo
+- más claridad
+- más confianza
+- una experiencia menos compleja
 
-## Tipos de ayuda actuales
+## Flujo actual del piloto
+
+1. elegir tipo de ayuda
+2. ingresar origen y destino
+3. elegir método de inventario
+4. revisar resumen y precio
+5. solicitar viaje
+6. ver tracking
+
+## Tipos actuales de ayuda
 
 - adulto_mayor
 - movilidad
 - carga_delicada
 
-## Datos que se guardan
+## Datos principales que hoy se guardan
 
 En `requests`:
-
 - customer_id
 - service_type = mudanza_asistida
 - assistance_type
@@ -33,25 +41,29 @@ En `requests`:
 - estimated_price_clp
 - status
 
-## Estado inicial
+## Relación con accesibilidad
 
-Cuando Assisted crea una solicitud, el estado parte como:
+Este flujo debe transformarse en una de las principales expresiones del carácter inclusivo de MUBER 2.
 
-- `pending`
+Eso implica evolucionar hacia:
+- instrucciones más claras
+- legibilidad alta
+- contraste
+- soporte futuro de voz
+- menor fricción
+- acompañamiento visual más evidente
 
-## Relación con Driver
+## Relación con el MVP
 
-Cuando Driver acepta:
-
-- la solicitud cambia a `accepted`
-- se crea el trip
-- se registra historial
-- se refleja el tracking en la pantalla
+El flujo Assisted ayuda a conectar el producto con la visión de:
+- accesibilidad universal
+- diseño usable para adultos mayores
+- soporte para necesidades diversas
+- experiencia más humana
 
 ## Tracking esperado
 
 Assisted debe poder ver:
-
 - Buscando conductor
 - Conductor asignado
 - Chofer en camino
@@ -61,4 +73,4 @@ Assisted debe poder ver:
 
 ## Regla clave
 
-El flujo asistido debe usar la misma base operativa del flujo User, pero con la lógica adicional de asistencia.
+El flujo asistido debe compartir la base operativa de MUBER 2, pero también debe funcionar como laboratorio real de la capa inclusiva del producto.

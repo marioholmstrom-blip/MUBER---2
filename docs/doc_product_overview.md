@@ -2,77 +2,76 @@
 
 ## Qué es MUBER 2
 
-MUBER 2 es una plataforma de logística y mudanzas orientada a un piloto operativo real en Valparaíso y Viña del Mar.
+MUBER 2 es una plataforma digital de logística y mudanzas con enfoque inclusivo, responsivo y escalable.
 
-El proyecto combina:
+No se define solo como una app para pedir fletes.  
+Se define como un sistema para planificar, solicitar, ejecutar y seguir mudanzas y traslados con mayor claridad, accesibilidad y trazabilidad.
 
-- app móvil en Expo y React Native
-- backend mínimo real en Supabase
-- estructura documental en GitHub
-- operación, métricas y tablero en Notion
+## Propuesta de valor
 
-## Propósito del producto
+MUBER 2 busca resolver problemas comunes del proceso de mudanza:
 
-Permitir una operación mínima real donde un usuario pueda:
+- desorden
+- baja transparencia en precios
+- poca trazabilidad
+- baja confianza en proveedores
+- experiencia poco accesible para ciertos usuarios
 
-- solicitar un viaje
-- ver el estado del servicio
-- recibir asignación de conductor
-- seguir el avance del viaje
+## Diferenciadores principales
 
-Y donde el equipo pueda:
+- accesibilidad universal
+- experiencia clara y guiada
+- inventario como eje del servicio
+- soporte para multiidioma
+- operación compatible con conectividad limitada
+- trazabilidad del estado del servicio
+- integración entre operación real y backoffice
 
-- operar el piloto
-- registrar viajes reales
-- medir ingresos y estados
-- mejorar el servicio con trazabilidad
+## Núcleo del sistema
 
-## Servicios actuales
+El sistema se sostiene sobre dos capas:
 
-- Flete estándar
-- Última milla
-- Mudanza asistida
+### Capa operativa
+- requests
+- trips
+- tracking
+- historial de estados
+- pricing
+- ejecución del servicio
 
-## Usuarios del sistema
+### Capa de experiencia y diferenciación
+- accesibilidad
+- inventario
+- mapa / logística
+- presupuesto
+- notificaciones
+- soporte a usuarios con necesidades diversas
 
-### Usuario
-Persona que solicita un viaje o traslado.
+## Público objetivo
 
-### Usuario asistido
-Persona que requiere apoyo adicional para una mudanza o traslado.
+- personas que se mudan
+- familias
+- estudiantes
+- adultos mayores
+- personas con discapacidad visual
+- usuarios que requieren un flujo más asistido
+- pequeños negocios y usos B2B futuros
 
-### Driver
-Conductor que carga solicitudes, acepta viajes y actualiza estados.
-
-### Operación
-Capa de seguimiento del piloto, métricas y control en Notion.
-
-## Territorio inicial
+## Zona inicial
 
 - Valparaíso
 - Viña del Mar
 
-## Base técnica actual
+## Estado actual
 
-- User conectado a Supabase
-- Assisted conectado a Supabase
-- Driver conectado a Supabase
-- requests reales
-- trips reales
-- trip_status_history funcionando
-- tracking visible
-- conductor y vehículo simulado en `trips`
+La fase actual del proyecto es un MVP operativo en construcción, con piloto real sobre backend Supabase y documentación estructurada en GitHub, mientras Notion funciona como backoffice y dashboard del piloto.
 
-## Meta del piloto
+## Horizonte de trabajo
 
-Validar una secuencia mínima real:
-
-solicitar → aceptar → ejecutar → finalizar → registrar → medir
-
-## Relación con GitHub y Notion
-
-### GitHub
-Sirve como base técnica, documental y estructural del proyecto.
-
-### Notion
-Sirve como centro operativo, dashboard y seguimiento del piloto.
+La ruta de 30 días debe avanzar sobre:
+- accesibilidad
+- inventario
+- mapa / logística
+- presupuesto
+- notificaciones
+- consolidación del flujo real del piloto

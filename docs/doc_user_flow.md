@@ -2,26 +2,30 @@
 
 ## Objetivo
 
-Definir el flujo del usuario estándar dentro de MUBER 2.
+Definir el flujo del usuario estándar en MUBER 2.
 
-## Flujo actual
+## Flujo actual del piloto
 
-1. Elegir servicio
-2. Ingresar origen y destino
-3. Elegir método de inventario
-4. Revisar resumen y precio
-5. Solicitar viaje
-6. Ver tracking
+1. elegir servicio
+2. ingresar origen y destino
+3. elegir método de inventario
+4. revisar resumen y precio
+5. solicitar viaje
+6. ver tracking
 
-## Servicios posibles
+## Sentido del flujo
 
-- flete_estandar
-- ultima_milla
+Este flujo no debe entenderse solo como una secuencia logística.
 
-## Datos que se guardan
+También debe responder a objetivos de:
+- claridad
+- accesibilidad
+- reducción de fricción
+- comprensión del estado del servicio
+
+## Datos principales que hoy se guardan
 
 En `requests`:
-
 - customer_id
 - service_type
 - assistance_type
@@ -32,25 +36,32 @@ En `requests`:
 - estimated_price_clp
 - status
 
-## Estado inicial
+## Servicios actuales
 
-Cuando User crea una solicitud, el estado parte como:
+- flete_estandar
+- ultima_milla
 
-- `pending`
+## Relación con inventario
 
-## Relación con Driver
+El inventario no es un adorno del flujo.  
+Es una pieza central del producto y una base futura para mejorar:
+- presupuesto
+- clasificación del servicio
+- selección operativa
+- calidad de la cotización
 
-Cuando Driver acepta una solicitud:
+## Relación con accesibilidad
 
-- `requests.status` pasa a `accepted`
-- se crea un `trip`
-- se registra historial
-- el tracking del usuario cambia
+El flujo de User debe evolucionar para soportar:
+- textos más claros
+- mejor legibilidad
+- menor carga cognitiva
+- lectura simple del estado
+- soporte futuro de voz y modo accesible
 
 ## Tracking esperado
 
-User debe poder ver:
-
+El usuario debe poder ver:
 - Buscando conductor
 - Conductor asignado
 - Chofer en camino
@@ -60,5 +71,9 @@ User debe poder ver:
 
 ## Regla clave
 
-El usuario no debe depender de mensajes ambiguos.  
-El estado visible debe reflejar el estado real guardado en Supabase.
+El flujo visible debe mantenerse simple, pero el sistema debe crecer hacia una experiencia más robusta con:
+- mejor pricing
+- mejor inventario
+- más trazabilidad
+- más accesibilidad
+- notificaciones

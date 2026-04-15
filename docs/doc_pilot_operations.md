@@ -2,28 +2,44 @@
 
 ## Objetivo
 
-Definir cómo MUBER 2 se conecta con la operación real del piloto.
+Definir cómo MUBER 2 conecta su producto, backend y operación real durante el piloto.
 
-## Centro operativo
+## Sistema operativo del proyecto
 
 ### GitHub
 Se usa para:
-- estructura técnica
-- documentación versionada
+- documentación técnica
+- estructura base
+- reglas
 - specs
 - changes
-- reglas del sistema
+- trazabilidad de evolución
+
+### Supabase
+Se usa para:
+- backend real del piloto
+- persistencia de requests
+- trips
+- historial
+- validación de estados
 
 ### Notion
 Se usa para:
-- dashboard operativo
+- backoffice operativo
+- dashboard ejecutivo
 - métricas
-- ingresos
-- seguimiento diario
-- plan del piloto
-- base documental operativa
+- control del piloto
+- lectura de ingresos y KPIs
+- coordinación interna
 
-## Qué debe poder medir la operación
+## Regla estructural
+
+Notion no es backend.
+Notion opera.
+Supabase ejecuta.
+GitHub documenta y estructura.
+
+## Qué debe poder medir el piloto
 
 - solicitudes creadas
 - solicitudes aceptadas
@@ -36,18 +52,21 @@ Se usa para:
 - viajes por medio de pago
 - incidencias
 
-## Operación mínima del piloto
+## Ruta de 30 días
 
-La operación del piloto debe permitir:
+La operación del piloto debe acompañar el desarrollo de estas líneas:
+- accesibilidad
+- inventario
+- mapa / logística
+- presupuesto
+- notificaciones
+- tracking
+- métricas
 
-1. recibir solicitud
-2. aceptar solicitud
-3. ejecutar viaje
-4. finalizar viaje
-5. registrar trazabilidad
-6. revisar métricas
+## Regla del piloto
 
-## Regla clave
-
-La app y la operación deben conversar entre sí.  
-No basta con que el flujo funcione: también debe poder medirse.
+La operación no debe separarse del producto.
+Cada mejora del sistema debe ayudar también a:
+- operar mejor
+- medir mejor
+- aprender más rápido

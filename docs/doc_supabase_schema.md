@@ -1,11 +1,20 @@
-
 # Supabase schema
 
 ## Objetivo
 
-Describir la estructura base de datos actual de MUBER 2.
+Documentar la estructura base de datos actual de MUBER 2 usando Supabase como backend operativo del piloto.
 
-## Tablas principales
+## Nota importante
+
+En material estratégico previo del proyecto aparecen otras alternativas técnicas como Firebase, SQL, RoR o Python como parte de la arquitectura conceptual del sistema.
+
+Sin embargo, el piloto operativo actual de MUBER 2 ya está implementado sobre Supabase.
+
+Por lo tanto:
+- la visión histórica y estratégica se respeta
+- pero la implementación actual documentada aquí corresponde a Supabase
+
+## Tablas principales actuales
 
 - requests
 - trips
@@ -58,7 +67,7 @@ Representa el viaje ya aceptado por Driver.
 
 ## trip_status_history
 
-Representa el historial del cambio de estados.
+Representa el historial de estados del viaje.
 
 ### Campos principales
 - id
@@ -67,19 +76,16 @@ Representa el historial del cambio de estados.
 - note
 - created_at
 
-## Relación principal
+## Lectura conceptual del sistema
 
-- un `request` puede convertirse en un `trip`
-- un `trip` puede tener varios cambios en `trip_status_history`
+La documentación estratégica anterior hablaba de un núcleo tipo `orders`.
 
-## Estado actual del sistema
+En la implementación actual del piloto eso se expresa así:
 
-- User escribe en `requests`
-- Assisted escribe en `requests`
-- Driver crea `trips`
-- Driver actualiza `trip_status`
-- User y Assisted leen tracking desde `trips`
+- `requests` = intención o solicitud inicial
+- `trips` = ejecución operativa del servicio
 
 ## Regla clave
 
-Los estados visibles en la app deben estar respaldados por datos reales en Supabase.
+Supabase es la fuente de verdad operativa del piloto actual.
+La documentación debe reflejar eso con claridad.
