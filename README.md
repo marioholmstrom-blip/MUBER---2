@@ -84,6 +84,13 @@ Se usa como:
 - lectura de métricas
 - seguimiento ejecutivo
 
+## Seguridad
+
+Existe una guía operativa de seguridad para MUBER con reglas base y prompts listos para revisión, setup, integraciones y checklist antes de publicar.
+
+Ver:
+[muber-2/contexto/prompts-seguridad-muber.md](./contexto/prompts-seguridad-muber.md)
+
 ## Ruta de 30 días
 
 La ruta de 30 días debe consolidar el MVP y preparar el piloto real sobre estas líneas:
@@ -127,6 +134,12 @@ Las notificaciones deben acompañar el estado del servicio y reducir incertidumb
 - `docs/`
 - `ai-specs/`
 - `openspec/`
+
+## Documentos operativos relevantes
+
+- [docs/doc_pilot_operations.md](./docs/doc_pilot_operations.md)
+- [docs/doc_test_automation_mvp.md](./docs/doc_test_automation_mvp.md)
+- [docs/doc_driver_applications_notion_test_spec.md](./docs/doc_driver_applications_notion_test_spec.md)
 
 ## Objetivo inmediato
 

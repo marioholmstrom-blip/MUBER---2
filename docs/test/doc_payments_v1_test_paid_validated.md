@@ -4,10 +4,10 @@
 La v1 de pagos de MUBER TEST fue validada correctamente.
 
 ## Flujo validado
-servicio ? inventario ? resumen ? precio ? solicitud ? viaje ? pago
+servicio → inventario → resumen → precio → solicitud → viaje → pago
 
 ## Resultado Supabase TEST
-�ltimo pago validado:
+Último pago validado:
 
 - payment_id: c5a1ae33-49e7-4a83-bbdd-f39400b22533
 - trip_id: a4a86f2f-2fbb-4c1d-94a4-7c6e30463d1b
@@ -46,13 +46,14 @@ Notion se mantiene como backoffice, no como backend.
 - supabase/functions/confirm-trip-payment/index.ts
 - supabase/functions/get-payment-status/index.ts
 - supabase/functions/get-request-tracking/index.ts
+- supabase/functions/start-trip-payment/index.ts
 - supabase/functions/_shared/transbank.ts
 - supabase/functions/_shared/cors.ts
 
 ## Respaldo local
-Se cre� respaldo local en:
+Se creó respaldo local en:
 
 _backups/test-pago-v1-paid-ok
 
-## Pr�ximo paso
-Usar este punto como respaldo estable antes de continuar auditor�a UX/UI, correcci�n visual de WebView o futura migraci�n controlada a REAL.
+## Próximo paso
+Usar este punto como respaldo estable antes de continuar auditoría UX/UI, corrección visual de WebView o futura migración controlada a REAL.

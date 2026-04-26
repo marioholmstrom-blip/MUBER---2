@@ -1,37 +1,51 @@
 # Spec: inventory
 
-## Propósito
-Alinear la spec de `inventory` con la ruta integrada final de 30 días de MUBER 2.
+## Proposito
+Alinear la spec de `inventory` con la ruta integrada final de 30 dias de MUBER 2.
 
 ## Rol de inventory en el sistema
 El inventario no es un agregado decorativo.
-Es una pieza estratégica del producto.
+Es una pieza estrategica del producto.
 
 Debe ayudar a mejorar:
-- comprensión del servicio
+- comprension del servicio
 - presupuesto
-- clasificación del traslado
+- clasificacion del traslado
 - confianza del usuario
 - trazabilidad operativa
 
-## Relación con la ruta de 30 días
-La ruta integrada define que el MVP y la ruta de 30 días deben avanzar con inventario como eje real del producto.
+## Relacion con la ruta de 30 dias
+La ruta integrada define que el MVP y la ruta de 30 dias deben avanzar con inventario como eje real del producto.
 
 ## Debe soportar
-- método manual
-- método scanner
-- método voz
+- metodo manual
+- metodo scanner
+- metodo voz
 - resumen del inventario
-- futura relación con pricing y logística
+- detalle por item vinculado al `request_id`
+- futura relacion con pricing y logistica
 
 ## Regla de producto
 El inventario debe evolucionar como base para:
 - mejor presupuesto
 - mejor lectura operativa
-- mejor preparación del viaje
+- mejor preparacion del viaje
 
-## Regla técnica
+## Regla tecnica
 Aunque hoy parte del inventario sea simple, su spec debe quedar preparada para crecer sin romper el flujo actual.
 
-## Criterio de éxito
-La spec de inventory está bien alineada si ayuda a que MUBER 2 se diferencie y llegue al piloto real con una propuesta más clara y más útil.
+## Estado validado en TEST
+En `TEST` ya quedo validado para `User`:
+- inventario manual guiado
+- `inventory_summary` guardado en `requests`
+- detalle guardado en `inventory_items`
+- relacion real por `request_id`
+
+## Relacion con piloto real
+La futura migracion a `REAL` debe mantener:
+- el mismo flujo visible
+- la misma trazabilidad en Supabase
+- la base lista para una siguiente capa de peso, volumen y recomendacion de vehiculo
+
+## Criterio de exito
+La spec de inventory esta bien alineada si ayuda a que MUBER 2 se diferencie y llegue al piloto real con una propuesta mas clara y mas util.
