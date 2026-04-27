@@ -1,0 +1,148 @@
+src/app/components/screens/DriverScreen.tsx (Pantalla de Chofer / Panel de Ganancias)
+El dashboard del conductor (Partner MUBER PRO) mostrando el desglose del esquema de ganancias 80/20 y las insignias de empatía.
+
+import { useState } from "react";
+import { useNavigate } from "react-router";
+import { ArrowLeft, SwitchCamera, ShieldCheck, Heart, Award, Info, TrendingUp } from "lucide-react";
+import { motion } from "motion/react";
+
+const AVATAR_URL = "https://images.unsplash.com/photo-1741389265274-fd22f41dd5e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoaXNwYW5pYyUyMG1hbiUyMGRyaXZlciUyMHNtaWxpbmd8ZW58MXx8fHwxNzc1NDMxMjAyfDA&ixlib=rb-4.1.0&q=80&w=1080";
+const MAP_BG_URL = "https://images.unsplash.com/photo-1586805698982-5c9eda3a8c91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2YWxwYXJhaXNvJTIwY2hpbGUlMjBjaXR5JTIwbWFwJTIwdG9wb2dyYXBoeXxlbnwxfHx8fDE3NzU0MzExOTh8MA&ixlib=rb-4.1.0&q=80&w=1080";
+
+export function DriverScreen() {
+  const navigate = useNavigate();
+
+  return (
+    <div className="relative flex h-full w-full flex-col bg-white font-sans text-[#2c3e50]">
+      {/* Background Visual Cues - Valparaíso Hills */}
+      <div 
+        className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-10 mix-blend-multiply"
+        style={{ backgroundImage: `url(${MAP_BG_URL})` }}
+      />
+
+      {/* Header Profile */}
+      <div className="relative z-10 border-b-[8px] border-[#2c3e50] bg-[#2c3e50] px-6 pb-12 pt-12 shadow-[0_12px_0px_#e67e22]">
+        <div className="mb-8 flex items-center justify-between">
+          <button 
+            onClick={() => navigate("/")} 
+            className="rounded-xl border-4 border-white bg-transparent p-3 text-white transition-transform active:translate-y-1 active:bg-white active:text-[#2c3e50]"
+            aria-label="Volver"
+          >
+            <ArrowLeft size={32} strokeWidth={4} />
+          </button>
+          <div className="text-center">
+            <h1 className="text-[28px] font-black tracking-widest text-[#e67e22] bg-white px-4 py-1 border-[6px] border-[#e67e22] rounded-xl shadow-[6px_6px_0px_#1a252f]">
+              MUBER PRO
+            </h1>
+          </div>
+          <button 
+            className="rounded-xl border-4 border-white bg-transparent p-3 text-white transition-transform active:translate-y-1 active:bg-white active:text-[#2c3e50]"
+            aria-label="Cámara"
+          >
+            <SwitchCamera size={32} strokeWidth={4} />
+          </button>
+        </div>
+
+        <div className="flex flex-col items-center justify-center gap-6 text-white sm:flex-row">
+          <div className="relative">
+            <img 
+              src={AVATAR_URL} 
+              alt="Perfil de Carlos" 
+              className="h-32 w-32 rounded-2xl border-[6px] border-[#e67e22] object-cover shadow-[8px_8px_0px_#1a252f]"
+            />
+            <div className="absolute -bottom-4 -right-4 rounded-xl border-4 border-[#2c3e50] bg-green-500 p-2 shadow-[4px_4px_0px_#1a252f]">
+              <ShieldCheck className="text-white" size={32} strokeWidth={3} />
+            </div>
+          </div>
+          <div className="text-center sm:text-left mt-4 sm:mt-0">
+            <h2 className="text-[32px] font-black leading-none drop-shadow-md">Carlos V.</h2>
+            <p className="mt-2 text-2xl font-bold text-[#e67e22]">Nivel Experto</p>
+            <div className="mt-3 inline-flex items-center gap-2 rounded-xl border-4 border-white bg-white px-4 py-2 text-[#2c3e50] shadow-[4px_4px_0px_#1a252f]">
+              <Award size={28} strokeWidth={3} />
+              <span className="text-[22px] font-black">4.9 / 5.0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Dashboard Content */}
+      <div className="relative z-10 flex flex-1 flex-col gap-8 overflow-y-auto px-6 pb-12 pt-16">
+        
+        {/* Empathy Badges */}
+        <motion.div 
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          className="flex flex-col rounded-3xl border-[6px] border-[#2c3e50] bg-slate-50 p-6 shadow-[8px_8px_0px_#2c3e50]"
+        >
+          <div className="mb-6 flex items-center gap-4">
+            <Heart size={40} className="text-red-500" strokeWidth={3} fill="#ef4444" />
+            <h3 className="text-3xl font-black text-[#2c3e50] leading-none">Insignias de Empatía</h3>
+          </div>
+          
+          <div className="flex flex-col gap-5">
+            <div className="flex items-center gap-5 rounded-2xl border-4 border-[#e67e22] bg-white p-4 shadow-[4px_4px_0px_#e67e22]">
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-[#e67e22] text-white">
+                <ShieldCheck size={40} strokeWidth={2.5} />
+              </div>
+              <div>
+                <h4 className="text-[22px] font-black leading-tight text-[#2c3e50]">Certificado: Adulto Mayor</h4>
+                <p className="text-[18px] font-bold text-slate-700 mt-1">Capacitación completa</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-5 rounded-2xl border-4 border-[#2c3e50] bg-white p-4 shadow-[4px_4px_0px_#2c3e50]">
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-[#2c3e50] text-[#e67e22]">
+                <TrendingUp size={40} strokeWidth={3} />
+              </div>
+              <div>
+                <h4 className="text-[22px] font-black leading-tight text-[#2c3e50]">Puntaje de Cuidado</h4>
+                <p className="text-[18px] font-bold text-slate-700 mt-1">Alto Rendimiento (Top 5%)</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Financial Breakdown */}
+        <motion.div 
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.1 }}
+          className="flex flex-col rounded-3xl border-[6px] border-[#2c3e50] bg-[#e67e22] p-6 text-[#2c3e50] shadow-[8px_8px_0px_#2c3e50] mb-8"
+        >
+          <div className="mb-6 flex items-start justify-between">
+            <h3 className="text-3xl font-black leading-tight">Desglose de Ganancias</h3>
+            <Info size={36} strokeWidth={3} className="text-white drop-shadow-md" />
+          </div>
+
+          {/* Bold Visual Chart/Progress Bar */}
+          <div className="mb-6 flex h-16 w-full items-stretch overflow-hidden rounded-2xl border-[6px] border-[#2c3e50] shadow-[4px_4px_0px_#2c3e50]">
+            <div className="flex items-center justify-center bg-white" style={{ width: "80%" }}>
+              <span className="text-[24px] font-black tracking-wide text-[#2c3e50]">80% Tu Ganancia</span>
+            </div>
+            <div className="flex items-center justify-center bg-[#2c3e50] border-l-[6px] border-[#2c3e50]" style={{ width: "20%" }}>
+              <span className="text-[20px] font-black tracking-wide text-white">20%</span>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center justify-between rounded-xl border-4 border-[#2c3e50] bg-white p-4 shadow-[4px_4px_0px_#2c3e50]">
+              <span className="text-[20px] font-bold">Tu Ganancia Neta</span>
+              <span className="text-[24px] font-black">80%</span>
+            </div>
+            <div className="flex items-center justify-between rounded-xl border-4 border-[#2c3e50] bg-[#2c3e50] text-white p-4 shadow-[4px_4px_0px_#1a252f]">
+              <span className="text-[20px] font-bold">Comisión Muber</span>
+              <span className="text-[24px] font-black text-[#e67e22]">20%</span>
+            </div>
+          </div>
+          
+          <div className="mt-8 rounded-xl border-4 border-dashed border-[#2c3e50] p-4 text-center">
+            <p className="text-[20px] font-bold text-[#2c3e50]">
+              Bono del 10% activo por alta calificación (incluido en el 80%).
+            </p>
+          </div>
+        </motion.div>
+
+      </div>
+    </div>
+  );
+}

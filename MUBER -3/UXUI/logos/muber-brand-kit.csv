@@ -1,0 +1,31 @@
+LOGO,ID,Variante,Uso recomendado,Fondo,Wordmark MU,Wordmark BER,Ícono fondo,Ícono acento,Tagline,Archivo SVG,Archivo PNG,Contraste WCAG
+LOGO,1,Light,Web · Documentos · Impresión clara,#FFFFFF,#0A0A0A,#F5A800,#0A0A0A,#F5A800,"rgba(10,10,10,0.38)",muber-logo-light.svg,muber-logo-light.png,AAA (21:1 negro/blanco)
+LOGO,2,Dark,App oscura · Pantallas · Vehículos,#0A0A0A,#FFFFFF,#F5A800,#F5A800,#0A0A0A,"rgba(255,255,255,0.32)",muber-logo-dark.svg,muber-logo-dark.png,AAA (21:1 blanco/negro)
+LOGO,3,Amber,Banners · Señalética · Alto impacto,#F5A800,#0A0A0A,#FFFFFF,#0A0A0A,#F5A800,"rgba(10,10,10,0.42)",muber-logo-amber.svg,muber-logo-amber.png,AA+ (7.2:1 negro/ámbar)
+
+PALETA,Nombre,Hex,RGB,HSL,Uso principal,Contraste vs Blanco,Contraste vs Negro,WCAG nivel
+PALETA,Negro,#0A0A0A,"rgb(10,10,10)","hsl(0,0%,4%)",Fondo oscuro · Wordmark MU · Ícono,21:1,—,AAA
+PALETA,Ámbar,#F5A800,"rgb(245,168,0)","hsl(41,100%,48%)",Acento · Wordmark BER · Ícono,1.4:1,7.2:1,AA (sobre negro)
+PALETA,Blanco,#FFFFFF,"rgb(255,255,255)","hsl(0,0%,100%)",Fondo claro · Wordmark versión dark,—,21:1,AAA
+
+TIPOGRAFÍA,Elemento,Fuente,Peso,Tamaño base,Tracking,Transformación,Google Fonts URL
+TIPOGRAFÍA,Wordmark,Barlow Condensed,800 (Black),72px / escalable,letter-spacing: -1px,UPPERCASE,https://fonts.google.com/specimen/Barlow+Condensed
+TIPOGRAFÍA,Tagline,Barlow,600 (SemiBold),10px / escalable,letter-spacing: 3px,UPPERCASE,https://fonts.google.com/specimen/Barlow
+
+TAMAÑOS,Alias,Ancho px,Alto px,Uso
+TAMAÑOS,sm,160,40,Favicon · Breadcrumb · Nav compacta
+TAMAÑOS,md,320,80,Header móvil · Tarjetas
+TAMAÑOS,lg,480,120,Header desktop · Email · Documentos
+TAMAÑOS,xl,640,160,Hero · Presentaciones · Impresión A4
+
+ARCHIVOS,Archivo,Formato,Uso,Editable en Figma
+ARCHIVOS,muber-logo-light.svg,SVG,Producción web · Figma · Edición vectorial,Sí
+ARCHIVOS,muber-logo-dark.svg,SVG,Producción web · Figma · Edición vectorial,Sí
+ARCHIVOS,muber-logo-amber.svg,SVG,Producción web · Figma · Edición vectorial,Sí
+ARCHIVOS,muber-brand-kit.svg,SVG,Presentación brand · Los 3 logos juntos,Sí
+ARCHIVOS,muber-logo-light.png,PNG 1440×360px @3x,Documentos · Slides · Web fallback,No
+ARCHIVOS,muber-logo-dark.png,PNG 1440×360px @3x,Documentos · Slides · Web fallback,No
+ARCHIVOS,muber-logo-amber.png,PNG 1440×360px @3x,Documentos · Slides · Web fallback,No
+ARCHIVOS,muber-brand-kit.pdf,PDF vectorial,Imprenta · Envío a clientes · Revisión,No
+ARCHIVOS,MuberLogo.jsx,React JSX,App web Muber · Componente reutilizable,No
+ARCHIVOS,muber-brand-kit.csv,CSV,Esta hoja de especificaciones,—

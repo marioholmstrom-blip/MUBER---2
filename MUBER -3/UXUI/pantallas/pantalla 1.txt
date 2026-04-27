@@ -1,0 +1,21 @@
+import { createBrowserRouter, Navigate } from "react-router";
+import { Shell } from "./components/Shell";
+import { HomeScreen } from "./components/screens/HomeScreen";
+import { UserScreen } from "./components/screens/UserScreen";
+import { AssistedBookingScreen } from "./components/screens/AssistedBookingScreen";
+import { DriverScreen } from "./components/screens/DriverScreen";
+
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    Component: Shell,
+    children: [
+      { index: true, Component: HomeScreen },
+      { path: "user", Component: UserScreen },
+      { path: "assisted", Component: AssistedBookingScreen },
+      { path: "driver/*", Component: DriverScreen },
+      { path: "driver", Component: DriverScreen },
+      { path: "*", element: <Navigate to="/" replace /> },
+    ],
+  },
+]);

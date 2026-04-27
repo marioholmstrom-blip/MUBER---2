@@ -1,0 +1,25 @@
+#,Pantalla,Nombre,UX Goal,Componentes clave,Color fondo,Color acento,WCAG,Archivo PNG,Archivo JPG
+1,El Monitor,Estado: Disponible,Fricción cero — el chofer sabe que el sistema funciona,Mapa Valparaíso DarkMode · Glassmorphism flotante · Indicador pulsante Verde Puerto · Micro-KPIs · SwipeButton CTA,#040E1C,#D4A373 Ocre Industrial,AAA 7:1+,muber_s1_monitor.png,muber_s1_monitor.jpg
+2,La Oferta,Estado: Flete entrante,Decisión rápida bajo presión — alto impacto de contraste,Mapa persistente dim · Tarjeta borde ocre pulsante · Grupo Gestalt Proximidad ($15.000 / Cerro Alegre / 2 Camas) · SwipeButton con fill ocre,#040E1C (mapa) + rgba overlay,#D4A373 borde latente,AAA 7:1+,muber_s2_oferta.png,muber_s2_oferta.jpg
+3,El Cierre,Estado: Finalizar viaje,Transparencia · sensación de logro · confirmación Dashboard,Resumen ruta · Gráfico barras Gestalt Cierre (Flete|Comisión 20%|Neto 80%) · Slider pre-llenado · Sync Notion API · Botón FINALIZAR Y COBRAR,#0A192F Azul Ultramar,#D4A373 CTA · #10B981 neto,AAA 7:1+,muber_s3_cierre.png,muber_s3_cierre.jpg
+
+#,Token CSS,Valor,Uso,WCAG ratio vs fondo,Tailwind key,,,,
+T1,--mub-bg-deep,#0A192F,Fondo global · Pantalla Cierre,N/A (fondo),mub-deep,,,,
+T2,--mub-bg-map,#040E1C,Fondo mapa DarkMode,N/A (fondo),mub-map,,,,
+T3,--mub-accent,#D4A373,Ocre Industrial · Botones · Bordes activos,8.4:1 vs #040E1C,mub-accent,,,,
+T4,--mub-text,#E2E8F0,Blanco Humo · Texto primario,13.2:1 vs #0A192F,mub-text,,,,
+T5,--mub-text-muted,#94A3B8,Texto secundario,4.8:1 vs #0A192F,mub-muted,,,,
+T6,--mub-success,#10B981,Verde Puerto · Status · Ganancias,3.9:1 vs #0A192F,mub-green,,,,
+T7,--mub-danger,#EF4444,Alertas · Rechazar · Comisión negativa,4.5:1 vs #0A192F,mub-red,,,,
+T8,--mub-glass-bg,"rgba(10,25,47,0.86)",Glassmorphism · tarjetas flotantes,—,mub-glass,,,,
+T9,--mub-glass-border,"rgba(212,163,115,0.24)",Borde glassmorphism,—,mub-glass-border,,,,
+T10,--mub-radius,16px,Border-radius base (todos los componentes),—,rounded-mub,,,,
+
+#,Componente,Pantalla,Principio Gestalt,Descripción técnica,,,,,
+C1,Indicador pulsante,El Monitor,Semejanza,2 anillos concéntricos con animation-delay:0.7s en Verde Puerto — formas iguales percibidas como unidad,,,,,
+C2,KPI agrupados,El Monitor,Proximidad,3 métricas dentro del mismo contenedor glass sin separadores — el cerebro las agrupa automáticamente,,,,,
+C3,Tarjeta datos flete,La Oferta,Proximidad,$15.000 + Cerro Alegre + 2 Camas en un único contenedor rounded — percepción de unidad informativa,,,,,
+C4,Monto $15.000,La Oferta,Pregnancia,Font-size 56px Font-weight 900 — elemento más prominente = dato más importante,,,,,
+C5,SwipeButton,La Oferta,Affordance,Fill ocre sigue el dedo en tiempo real — feedback inmediato de la acción,,,,,
+C6,Gráfico de barras,El Cierre,Cierre,3 barras proporcionales al valor real (90px/18px/72px) — el cerebro completa la distribución sin leer números,,,,,
+C7,Slider pre-llenado,El Cierre,Fricción cero,Flete $15.000 pre-cargado — el chofer solo ajusta extras opcionales,,,,,

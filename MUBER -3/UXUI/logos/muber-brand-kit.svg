@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 440" width="520" height="440">
+  <title>MUBER — Brand Kit Completo</title>
+  <desc>Kit de logos MUBER: versión clara, oscura y ámbar. Listo para importar en Figma.</desc>
+
+  <!-- ═══════════════════════════════════════
+       FONDO GENERAL
+  ════════════════════════════════════════ -->
+  <rect width="520" height="440" fill="#F2F2F0"/>
+
+  <!-- Título del kit -->
+  <text x="260" y="32" text-anchor="middle"
+    font-family="'Barlow', Arial, sans-serif"
+    font-weight="600" font-size="11"
+    letter-spacing="3" fill="#0A0A0A" opacity="0.35">MUBER — BRAND KIT</text>
+
+  <!-- ═══════════════════════════════════════
+       LOGO 1 — FONDO CLARO
+  ════════════════════════════════════════ -->
+  <rect x="20" y="48" width="480" height="108" rx="14" fill="#FFFFFF"/>
+
+  <!-- Ícono -->
+  <rect x="36" y="60" width="80" height="80" rx="16" fill="#0A0A0A"/>
+  <rect x="47" y="76" width="44" height="11" rx="5.5" fill="#F5A800"/>
+  <rect x="47" y="92" width="29" height="11" rx="5.5" fill="#FFFFFF" opacity="0.45"/>
+  <polyline points="91,72 105,100 91,128" stroke="#F5A800" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Wordmark -->
+  <text x="122" y="120"
+    font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif"
+    font-weight="800" font-size="66" letter-spacing="-1" fill="#0A0A0A">MU</text>
+  <text x="257" y="120"
+    font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif"
+    font-weight="800" font-size="66" letter-spacing="-1" fill="#F5A800">BER</text>
+
+  <!-- Tagline -->
+  <text x="123" y="140"
+    font-family="'Barlow', Arial, sans-serif"
+    font-weight="600" font-size="10" letter-spacing="2.8"
+    fill="#0A0A0A" opacity="0.38">LOGÍSTICA · MUDANZAS</text>
+
+  <!-- Etiqueta versión -->
+  <text x="490" y="60"
+    font-family="'Barlow', Arial, sans-serif"
+    font-weight="600" font-size="9" letter-spacing="1.5"
+    fill="#0A0A0A" opacity="0.3" text-anchor="end">LIGHT</text>
+
+  <!-- ═══════════════════════════════════════
+       LOGO 2 — FONDO OSCURO
+  ════════════════════════════════════════ -->
+  <rect x="20" y="172" width="480" height="108" rx="14" fill="#0A0A0A"/>
+
+  <!-- Ícono -->
+  <rect x="36" y="184" width="80" height="80" rx="16" fill="#F5A800"/>
+  <rect x="47" y="200" width="44" height="11" rx="5.5" fill="#0A0A0A"/>
+  <rect x="47" y="216" width="29" height="11" rx="5.5" fill="#0A0A0A" opacity="0.38"/>
+  <polyline points="91,196 105,224 91,252" stroke="#0A0A0A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Wordmark -->
+  <text x="122" y="244"
+    font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif"
+    font-weight="800" font-size="66" letter-spacing="-1" fill="#FFFFFF">MU</text>
+  <text x="257" y="244"
+    font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif"
+    font-weight="800" font-size="66" letter-spacing="-1" fill="#F5A800">BER</text>
+
+  <!-- Tagline -->
+  <text x="123" y="264"
+    font-family="'Barlow', Arial, sans-serif"
+    font-weight="600" font-size="10" letter-spacing="2.8"
+    fill="#FFFFFF" opacity="0.32">LOGÍSTICA · MUDANZAS</text>
+
+  <!-- Etiqueta versión -->
+  <text x="490" y="184"
+    font-family="'Barlow', Arial, sans-serif"
+    font-weight="600" font-size="9" letter-spacing="1.5"
+    fill="#FFFFFF" opacity="0.3" text-anchor="end">DARK</text>
+
+  <!-- ═══════════════════════════════════════
+       LOGO 3 — FONDO ÁMBAR
+  ════════════════════════════════════════ -->
+  <rect x="20" y="296" width="480" height="108" rx="14" fill="#F5A800"/>
+
+  <!-- Ícono -->
+  <rect x="36" y="308" width="80" height="80" rx="16" fill="#0A0A0A"/>
+  <rect x="47" y="324" width="44" height="11" rx="5.5" fill="#F5A800"/>
+  <rect x="47" y="340" width="29" height="11" rx="5.5" fill="#FFFFFF" opacity="0.4"/>
+  <polyline points="91,320 105,348 91,376" stroke="#F5A800" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Wordmark -->
+  <text x="122" y="368"
+    font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif"
+    font-weight="800" font-size="66" letter-spacing="-1" fill="#0A0A0A">MU</text>
+  <text x="257" y="368"
+    font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif"
+    font-weight="800" font-size="66" letter-spacing="-1" fill="#FFFFFF">BER</text>
+
+  <!-- Tagline -->
+  <text x="123" y="388"
+    font-family="'Barlow', Arial, sans-serif"
+    font-weight="600" font-size="10" letter-spacing="2.8"
+    fill="#0A0A0A" opacity="0.42">LOGÍSTICA · MUDANZAS</text>
+
+  <!-- Etiqueta versión -->
+  <text x="490" y="308"
+    font-family="'Barlow', Arial, sans-serif"
+    font-weight="600" font-size="9" letter-spacing="1.5"
+    fill="#0A0A0A" opacity="0.3" text-anchor="end">AMBER</text>
+
+  <!-- ═══════════════════════════════════════
+       PALETA DE COLORES
+  ════════════════════════════════════════ -->
+  <text x="20" y="424"
+    font-family="'Barlow', Arial, sans-serif"
+    font-weight="600" font-size="9" letter-spacing="2"
+    fill="#0A0A0A" opacity="0.3">#0A0A0A</text>
+
+  <text x="200" y="424"
+    font-family="'Barlow', Arial, sans-serif"
+    font-weight="600" font-size="9" letter-spacing="2"
+    fill="#0A0A0A" opacity="0.3" text-anchor="middle">#F5A800</text>
+
+  <text x="500" y="424"
+    font-family="'Barlow', Arial, sans-serif"
+    font-weight="600" font-size="9" letter-spacing="2"
+    fill="#0A0A0A" opacity="0.3" text-anchor="end">#FFFFFF</text>
+</svg>
