@@ -497,6 +497,7 @@ export default function AdminDashboard({ goHome }) {
     <View style={styles.container}>
       <View style={styles.headerWrap}>
         <View>
+          <Text style={styles.breadcrumb}>Panel Director / Dashboard</Text>
           <Text style={styles.title}>Admin Dashboard</Text>
           <Text style={styles.subtitle}>Director · Mario Holmstrom</Text>
           <Text style={styles.testBadge}>Entorno: TEST</Text>
@@ -506,7 +507,14 @@ export default function AdminDashboard({ goHome }) {
 
         <View style={styles.headerActions}>
           <TouchableOpacity style={styles.secondaryButton} onPress={goHome} activeOpacity={0.9}>
-            <Text style={styles.secondaryButtonText}>Salir admin</Text>
+            <Text style={styles.secondaryButtonText}>← Volver al Panel Director</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.secondaryButton}
+            onPress={() => setActiveTab("overview")}
+            activeOpacity={0.9}
+          >
+            <Text style={styles.secondaryButtonText}>Inicio Dashboard</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.primaryButton}
@@ -584,6 +592,12 @@ const styles = StyleSheet.create({
     color: "#f9f2df",
     fontSize: 26,
     fontWeight: "900",
+  },
+  breadcrumb: {
+    color: "#d5deea",
+    fontSize: 12,
+    fontWeight: "700",
+    marginBottom: 4,
   },
   subtitle: {
     color: "#f5d9a8",

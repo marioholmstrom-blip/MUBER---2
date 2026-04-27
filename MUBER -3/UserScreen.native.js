@@ -3,6 +3,9 @@ import {
   ActivityIndicator,
   Linking,
   PanResponder,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
   View,
   Text,
   TouchableOpacity,
@@ -1016,7 +1019,11 @@ export default function UserScreen({ goHome, initialService = "" }) {
               </MapView>
             </View>
             
-            <View style={styles.trackingBottomSheet}>
+            <ScrollView
+              style={styles.trackingBottomSheet}
+              contentContainerStyle={styles.trackingBottomSheetContent}
+              showsVerticalScrollIndicator={false}
+            >
               <Text style={styles.sheetTitle}>6. Viaje en seguimiento</Text>
               <Text style={styles.sheetSubtitle}>
                 {isAccepted
@@ -1152,10 +1159,36 @@ export default function UserScreen({ goHome, initialService = "" }) {
               >
                 <Text style={styles.trackingHomeButtonText}>Volver al inicio</Text>
               </TouchableOpacity>
-            </View>
+            </ScrollView>
           </View>
         ) : (
         <View style={styles.sheet}>
+          {step === "inventory" ? (
+            <View style={styles.inventoryStepHost}>
+              <InventoryStepRefactor
+                onBack={() => setStep("route")}
+                onConfirm={({ inventoryMethod, inventoryItems, inventorySpecialNeeds, inventorySummary }) => {
+                  setInventoryMethod(normalizeInventoryMethodForUi(inventoryMethod));
+                  setInventoryItems(inventoryItems);
+                  setInventorySpecialNeeds(inventorySpecialNeeds);
+                  setInventorySummary(
+                    inventorySummary?.trim() || buildInventorySummaryFromItems(inventoryItems)
+                  );
+                  setStep("summary");
+                }}
+              />
+            </View>
+          ) : (
+          <KeyboardAvoidingView
+            style={styles.sheetKeyboardWrap}
+            behavior={Platform.OS === "ios" ? "padding" : undefined}
+          >
+          <ScrollView
+            style={styles.sheetScroll}
+            contentContainerStyle={styles.sheetScrollContent}
+            keyboardShouldPersistTaps="handled"
+            showsVerticalScrollIndicator={false}
+          >
           {step === "service" && (
             <>
               <Text style={styles.sheetTitle}>1. Elegir servicio</Text>
@@ -1251,21 +1284,6 @@ export default function UserScreen({ goHome, initialService = "" }) {
                 <Text style={styles.routeBackButtonText}>Volver</Text>
               </TouchableOpacity>
             </>
-          )}
-
-          {step === "inventory" && (
-            <InventoryStepRefactor
-              onBack={() => setStep("route")}
-              onConfirm={({ inventoryMethod, inventoryItems, inventorySpecialNeeds, inventorySummary }) => {
-                setInventoryMethod(normalizeInventoryMethodForUi(inventoryMethod));
-                setInventoryItems(inventoryItems);
-                setInventorySpecialNeeds(inventorySpecialNeeds);
-                setInventorySummary(
-                  inventorySummary?.trim() || buildInventorySummaryFromItems(inventoryItems)
-                );
-                setStep("summary");
-              }}
-            />
           )}
 
           {step === "summary" && (
@@ -1806,7 +1824,9 @@ export default function UserScreen({ goHome, initialService = "" }) {
               ) : null}
             </>
           )}
-
+          </ScrollView>
+          </KeyboardAvoidingView>
+          )}
         </View>
         )}
       </SafeAreaView>
@@ -1859,9 +1879,23 @@ const styles = StyleSheet.create({
   sheet: {
     backgroundColor: "#ffffff",
     borderRadius: 28,
-    padding: 28,
+    padding: 16,
     marginBottom: 6,
-    minHeight: 500,
+    flex: 1,
+  },
+  sheetKeyboardWrap: {
+    flex: 1,
+  },
+  sheetScroll: {
+    flex: 1,
+  },
+  sheetScrollContent: {
+    paddingHorizontal: 12,
+    paddingBottom: 44,
+  },
+  inventoryStepHost: {
+    flex: 1,
+    width: "100%",
   },
   title: { fontSize: 24, fontWeight: "900", color: "#22313f", marginBottom: 8 },
   subtitle: {
@@ -2257,6 +2291,9 @@ const styles = StyleSheet.create({
   },
   trackingTabContent: {
     gap: 8,
+  },
+  trackingBottomSheetContent: {
+    paddingBottom: 28,
   },
   trackingField: {
     flexDirection: "row",

@@ -2,22 +2,26 @@ import React, { useCallback, useEffect, useState } from "react";
 import {
   ActivityIndicator,
   Alert,
+  BackHandler,
+  Platform,
   SafeAreaView,
   StyleSheet,
   Text,
-  TouchableOpacity,
 } from "react-native";
 import HomeScreen from "./HomeScreen";
 import UserScreen from "./UserScreen";
 import AssistedScreen from "./AssistedScreen";
 import DriverScreen from "./DriverScreen";
 import AdminDashboard from "./AdminDashboard";
+import DirectorPanel from "./DirectorPanel";
+import AuthScreen from "./AuthScreen";
 import { supabase } from "./lib/supabase";
 
 export default function App() {
   const [screen, setScreen] = useState("loading");
   const [userRole, setUserRole] = useState(null);
   const [initialUserService, setInitialUserService] = useState("");
+  const [authMessage, setAuthMessage] = useState("");
 
   const resolveScreenByRole = useCallback((roleValue) => {
     const role = String(roleValue || "customer").toLowerCase();
@@ -29,7 +33,7 @@ export default function App() {
     }
 
     if (role === "admin") {
-      setScreen("admin");
+      setScreen("director");
       return;
     }
 
@@ -38,6 +42,7 @@ export default function App() {
 
   const loadSessionAndRole = useCallback(async () => {
     setScreen("loading");
+    setAuthMessage("");
 
     const {
       data: { session },
@@ -45,6 +50,10 @@ export default function App() {
     } = await supabase.auth.getSession();
 
     if (sessionError) {
+      setAuthMessage(
+        sessionError?.message ||
+          "No se pudo validar la sesión en Supabase Auth. Intenta nuevamente."
+      );
       setScreen("unauthenticated");
       return;
     }
@@ -60,7 +69,24 @@ export default function App() {
       .eq("id", session.user.id)
       .single();
 
-    if (profileError) {
+    const profileNotFound =
+      !profile ||
+      profileError?.code === "PGRST116" ||
+      /0 rows|no rows/i.test(String(profileError?.message || ""));
+
+    if (profileError && !profileNotFound) {
+      setAuthMessage(
+        profileError?.message ||
+          "No se pudo cargar el perfil del usuario desde Supabase profiles."
+      );
+      setScreen("unauthenticated");
+      return;
+    }
+
+    if (profileNotFound) {
+      setAuthMessage(
+        "Sesión iniciada, pero no existe perfil asociado en Supabase profiles."
+      );
       setScreen("unauthenticated");
       return;
     }
@@ -95,8 +121,83 @@ export default function App() {
     };
   }, [loadSessionAndRole]);
 
+  useEffect(() => {
+    if (Platform.OS !== "android") {
+      return undefined;
+    }
+
+    const handleHardwareBack = () => {
+      const role = String(userRole || "customer").toLowerCase();
+
+      if (role === "admin") {
+        if (screen !== "director") {
+          setScreen("director");
+          return true;
+        }
+
+        Alert.alert("Salir de MUBER", "¿Deseas salir de la app?", [
+          { text: "Cancelar", style: "cancel" },
+          {
+            text: "Salir",
+            style: "destructive",
+            onPress: () => BackHandler.exitApp(),
+          },
+        ]);
+        return true;
+      }
+
+      if (role === "driver") {
+        if (screen !== "driver") {
+          setScreen("driver");
+          return true;
+        }
+        return false;
+      }
+
+      if (role === "customer") {
+        if (screen !== "home" && screen !== "loading" && screen !== "unauthenticated") {
+          setScreen("home");
+          return true;
+        }
+      }
+
+      return false;
+    };
+
+    const subscription = BackHandler.addEventListener(
+      "hardwareBackPress",
+      handleHardwareBack
+    );
+
+    return () => {
+      subscription.remove();
+    };
+  }, [screen, userRole]);
+
   const goHomeByRole = () => {
-    resolveScreenByRole(userRole || "customer");
+    const role = String(userRole || "customer").toLowerCase();
+
+    if (role === "admin") {
+      setScreen("director");
+      return;
+    }
+
+    if (role === "driver") {
+      setScreen("driver");
+      return;
+    }
+
+    setScreen("home");
+  };
+
+  const signOutToUnauthenticated = async () => {
+    try {
+      await supabase.auth.signOut();
+    } finally {
+      setUserRole(null);
+      setAuthMessage("");
+      setScreen("unauthenticated");
+    }
   };
 
   if (screen === "loading") {
@@ -111,24 +212,28 @@ export default function App() {
 
   if (screen === "unauthenticated") {
     return (
-      <SafeAreaView style={styles.centeredScreen}>
-        <Text style={styles.centeredTitle}>AuthScreen</Text>
-        <Text style={styles.centeredHint}>
-          No hay sesión activa. Inicia sesión para continuar.
-        </Text>
-        <TouchableOpacity
-          style={styles.retryButton}
-          onPress={loadSessionAndRole}
-          activeOpacity={0.9}
-        >
-          <Text style={styles.retryButtonText}>Reintentar</Text>
-        </TouchableOpacity>
-      </SafeAreaView>
+      <AuthScreen
+        onAuthenticated={loadSessionAndRole}
+        profileMessage={authMessage}
+      />
     );
   }
 
   if (screen === "admin") {
     return <AdminDashboard goHome={goHomeByRole} />;
+  }
+
+  if (screen === "director") {
+    return (
+      <DirectorPanel
+        onOpenDashboard={() => setScreen("admin")}
+        onOpenUser={() => setScreen("user")}
+        onOpenAssisted={() => setScreen("assisted")}
+        onOpenDriver={() => setScreen("driver")}
+        onOpenHome={() => setScreen("home")}
+        onSignOut={signOutToUnauthenticated}
+      />
+    );
   }
 
   if (screen === "user") {
@@ -182,17 +287,5 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     textAlign: "center",
     marginTop: 8,
-  },
-  retryButton: {
-    backgroundColor: "#e67e22",
-    borderRadius: 14,
-    paddingHorizontal: 18,
-    paddingVertical: 12,
-    marginTop: 20,
-  },
-  retryButtonText: {
-    color: "#1f2d3a",
-    fontWeight: "800",
-    fontSize: 15,
   },
 });
