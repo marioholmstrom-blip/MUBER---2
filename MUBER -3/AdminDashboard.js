@@ -499,6 +499,7 @@ export default function AdminDashboard({ goHome }) {
         <View>
           <Text style={styles.title}>Admin Dashboard</Text>
           <Text style={styles.subtitle}>Director · Mario Holmstrom</Text>
+          <Text style={styles.testBadge}>Entorno: TEST</Text>
           <Text style={styles.loadedHint}>Última actualización: {formatDate(loadedAt)}</Text>
           <Text style={styles.loadedHint}>Estado: {screenState}</Text>
         </View>
@@ -589,6 +590,18 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "700",
     marginTop: 4,
+  },
+  testBadge: {
+    alignSelf: "flex-start",
+    marginTop: 8,
+    backgroundColor: "#d89d4b",
+    color: "#10243e",
+    fontSize: 11,
+    fontWeight: "900",
+    borderRadius: 999,
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    overflow: "hidden",
   },
   loadedHint: {
     color: "#d5deea",
