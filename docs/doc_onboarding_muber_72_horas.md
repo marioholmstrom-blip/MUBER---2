@@ -24,6 +24,7 @@ El proyecto ya cuenta con:
 - flujo Assisted
 - flujo Driver
 - solicitudes y viajes en Supabase
+- necesidad de presentar MUBER ante Notion mediante landing o página web
 ```
 
 ## Regla principal de estas 72 horas
@@ -31,6 +32,8 @@ El proyecto ya cuenta con:
 ```text
 No cambiar el stack.
 Madurar el stack actual.
+Cerrar bugs críticos antes de piloto.
+Preparar una landing clara para presentar MUBER ante Notion.
 ```
 
 ## Stack aprobado
@@ -132,6 +135,24 @@ Notion solo refleja operación o sirve como backoffice.
 
 No debe decidir estados reales del sistema.
 
+### 5. Landing Notion
+
+Durante esta ventana se debe preparar una landing o página web corta para presentar MUBER ante el equipo/personas de Notion.
+
+Objetivo:
+
+```text
+Conseguir una extensión de recursos de Notion por 3 meses mostrando que MUBER es un proyecto real, avanzado y con uso operativo de Notion como backoffice.
+```
+
+Regla:
+
+```text
+La landing no reemplaza la app.
+La landing no reemplaza Supabase.
+La landing solo presenta el proyecto, su avance, su impacto y por qué Notion es estratégico para el backoffice de MUBER.
+```
+
 ## Prioridades inmediatas
 
 ### Prioridad A — Driver
@@ -151,6 +172,7 @@ Tareas:
 - mantener tracking interno si se necesita
 - asegurar que admin/director pueda probar Driver en TEST sin mezclar identidades
 - definir tarjeta futura: Viaje activo actual
+- corregir continuidad después de aceptar solicitud
 ```
 
 ### Prioridad B — User
@@ -158,7 +180,7 @@ Tareas:
 Objetivo:
 
 ```text
-Que User pueda avanzar sin bloqueos visuales.
+Que User pueda avanzar sin bloqueos visuales y sin crear solicitudes con precio cero.
 ```
 
 Tareas:
@@ -170,6 +192,7 @@ Tareas:
 - revisar solicitud
 - revisar tracking
 - revisar pago
+- bloquear estimated_price_clp = 0 en solicitudes nuevas
 ```
 
 ### Prioridad C — Panel Director
@@ -208,7 +231,85 @@ Tareas:
 - documentar qué debe pasar a Edge Functions
 ```
 
-### Prioridad E — EAS Build
+### Prioridad E — Landing / página web para Notion
+
+Objetivo:
+
+```text
+Crear una landing o página web de presentación para que las personas de Notion puedan entender MUBER rápido y evaluar una extensión de recursos por 3 meses.
+```
+
+Uso esperado:
+
+```text
+- presentar el proyecto MUBER de forma profesional
+- mostrar avance real del producto
+- explicar el rol de Notion como backoffice, no backend
+- mostrar por qué MUBER necesita 3 meses adicionales de recursos Notion
+- demostrar impacto social, territorial, operativo y tecnológico
+- apoyar gestiones de colaboración, crédito, extensión o patrocinio
+```
+
+Contenido mínimo de la landing:
+
+```text
+1. Hero claro:
+   MUBER — fletes y mudanzas locales con precio claro, chofer validado y seguimiento del servicio.
+
+2. Problema:
+   mudanzas/fletes informales, poca trazabilidad, estrés, falta de confianza, baja accesibilidad.
+
+3. Solución:
+   plataforma mobile-first con User, Assisted, Driver y Panel Director.
+
+4. Estado actual:
+   app Expo / React Native, Supabase TEST, flujos User/Assisted/Driver, Panel Director, pagos TEST, tracking y operación documentada.
+
+5. Rol de Notion:
+   backoffice operativo, seguimiento, documentación, postulaciones, tablero de piloto, coordinación y lectura ejecutiva.
+
+6. Por qué pedimos extensión de 3 meses:
+   cierre pre-piloto, investigación de usuarios/choferes, campaña territorial, QA, operación controlada y documentación viva.
+
+7. Impacto:
+   accesibilidad, adultos mayores, personas con movilidad reducida, estudiantes, juntas de vecinos, comercios locales y choferes.
+
+8. Evidencia:
+   investigación previa, cuestionarios, benchmark, journey map, repos GitHub, backend real y avances del frontend.
+
+9. Roadmap 72 horas / 30 días:
+   estabilización de bugs, investigación, QA, EAS Build, Google Maps futuro y piloto controlado.
+
+10. CTA:
+   Solicitud de extensión de recursos Notion por 3 meses para preparar y operar el piloto MUBER.
+```
+
+Criterios de la landing:
+
+```text
+- simple
+- mobile-first
+- clara para personas externas
+- sin datos sensibles
+- sin claves
+- sin exponer URLs privadas
+- sin prometer GPS completo si todavía no está cerrado
+- sin vender como producto final si aún está en pre-piloto
+- explicar TEST vs piloto real de forma limpia
+```
+
+Entregables sugeridos:
+
+```text
+- copy completo de landing
+- estructura visual por secciones
+- versión HTML o React simple si se decide implementarla
+- assets mínimos permitidos
+- CTA para Notion
+- documento de respaldo en GitHub MUBER 2
+```
+
+### Prioridad F — EAS Build
 
 Objetivo:
 
@@ -216,7 +317,7 @@ Objetivo:
 Preparar app instalable para pruebas internas.
 ```
 
-No ejecutar antes de cerrar QA básico móvil.
+No ejecutar antes de cerrar QA básico móvil y bugs críticos de continuidad/precio.
 
 ## Decisiones fijas
 
@@ -228,6 +329,7 @@ Supabase se mantiene.
 Expo se mantiene.
 Notion se mantiene como backoffice.
 GitHub se mantiene como trazabilidad.
+Landing Notion sí entra en las próximas 72 horas como pieza de presentación, no como backend ni reemplazo de la app.
 ```
 
 ## Criterio para aceptar cambios
@@ -242,6 +344,21 @@ Un cambio es aceptable si:
 - no usa Notion como backend
 - no reemplaza stack sin autorización
 - queda versionado en GitHub
+- ayuda a cerrar piloto, investigación o presentación Notion
+```
+
+## Criterio para aceptar la landing Notion
+
+La landing se considera lista si:
+
+```text
+- explica MUBER en menos de 2 minutos
+- muestra el estado real sin exagerar
+- diferencia claramente Supabase backend real y Notion backoffice
+- justifica la extensión de recursos por 3 meses
+- muestra impacto local/social/comercial
+- no contiene secretos ni datos sensibles
+- puede compartirse con personas externas a MUBER
 ```
 
 ## Resumen para agentes
@@ -259,6 +376,7 @@ Lee AGENTS.md.
 Respeta Supabase como backend real.
 Usa Notion solo como backoffice.
 Deja trazabilidad en GitHub.
+Si trabajas la landing Notion, no inventes métricas ni prometas funciones no validadas.
 ```
 
 ## Documento relacionado
@@ -267,4 +385,6 @@ Ver también:
 
 ```text
 docs/doc_ruta_72_horas_stack_muber.md
+docs/research/index_research_pre_piloto_muber.md
+docs/research/analisis_cuestionario_usuarios_vs_muber_hoy.md
 ```
