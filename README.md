@@ -84,6 +84,44 @@ Se usa como:
 - lectura de métricas
 - seguimiento ejecutivo
 
+## Ruta inmediata de 72 horas
+
+Durante las próximas 72 horas, MUBER mantiene el stack actual y no ejecuta migraciones mayores.
+
+Decisión fijada:
+
+```text
+No cambiar el stack.
+Madurar el stack actual.
+```
+
+Stack aprobado para esta ventana:
+
+```text
+Expo / React Native
+Supabase
+GitHub
+Notion
+Google Maps Platform como capa logística futura
+WebPay / Transbank
+Windsurf + Codex + GPT
+```
+
+Prioridades inmediatas:
+
+- estabilizar MUBER 3 mobile-first
+- corregir Driver, User, scroll, navegación y Panel Director
+- mantener Supabase TEST como backend real
+- reforzar RLS y permisos
+- mover acciones sensibles a Edge Functions cuando corresponda
+- preparar EAS Build
+- dejar Google Maps como próxima capa logística
+- evaluar Azure después, no durante esta ventana
+
+Ver:
+- [docs/doc_ruta_72_horas_stack_muber.md](./docs/doc_ruta_72_horas_stack_muber.md)
+- [docs/doc_onboarding_muber_72_horas.md](./docs/doc_onboarding_muber_72_horas.md)
+
 ## Seguridad
 
 Existe una guía operativa de seguridad para MUBER con reglas base y prompts listos para revisión, setup, integraciones y checklist antes de publicar.
@@ -140,6 +178,8 @@ Las notificaciones deben acompañar el estado del servicio y reducir incertidumb
 - [docs/doc_pilot_operations.md](./docs/doc_pilot_operations.md)
 - [docs/doc_test_automation_mvp.md](./docs/doc_test_automation_mvp.md)
 - [docs/doc_driver_applications_notion_test_spec.md](./docs/doc_driver_applications_notion_test_spec.md)
+- [docs/doc_ruta_72_horas_stack_muber.md](./docs/doc_ruta_72_horas_stack_muber.md)
+- [docs/doc_onboarding_muber_72_horas.md](./docs/doc_onboarding_muber_72_horas.md)
 
 ## Objetivo inmediato
 
@@ -149,3 +189,4 @@ Consolidar una base técnica y documental que permita:
 - reflejar correctamente el material estratégico del proyecto
 - operar el piloto real
 - alinear GitHub con Notion y con el backend actual en Supabase
+- ejecutar la ruta de 72 horas sin cambios innecesarios de stack
