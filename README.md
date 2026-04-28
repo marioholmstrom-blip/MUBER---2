@@ -122,6 +122,25 @@ Ver:
 - [docs/doc_ruta_72_horas_stack_muber.md](./docs/doc_ruta_72_horas_stack_muber.md)
 - [docs/doc_onboarding_muber_72_horas.md](./docs/doc_onboarding_muber_72_horas.md)
 
+## Investigación pre-piloto
+
+La investigación previa al piloto se consolida en un índice maestro para no perder el material antiguo de MUBER ni partir desde cero.
+
+Ese índice organiza:
+
+- mapa mental
+- cuestionario de usuarios
+- benchmark
+- journey map
+- heurística
+- inventario de componentes
+- investigación de choferes pendiente de localizar o reconstruir
+- vacíos de investigación antes del piloto
+- entregables para la última iteración UX/research
+
+Ver:
+- [docs/research/index_research_pre_piloto_muber.md](./docs/research/index_research_pre_piloto_muber.md)
+
 ## Seguridad
 
 Existe una guía operativa de seguridad para MUBER con reglas base y prompts listos para revisión, setup, integraciones y checklist antes de publicar.
@@ -170,6 +189,7 @@ Las notificaciones deben acompañar el estado del servicio y reducir incertidumb
 
 - `README.md`
 - `docs/`
+- `docs/research/`
 - `ai-specs/`
 - `openspec/`
 
@@ -180,6 +200,7 @@ Las notificaciones deben acompañar el estado del servicio y reducir incertidumb
 - [docs/doc_driver_applications_notion_test_spec.md](./docs/doc_driver_applications_notion_test_spec.md)
 - [docs/doc_ruta_72_horas_stack_muber.md](./docs/doc_ruta_72_horas_stack_muber.md)
 - [docs/doc_onboarding_muber_72_horas.md](./docs/doc_onboarding_muber_72_horas.md)
+- [docs/research/index_research_pre_piloto_muber.md](./docs/research/index_research_pre_piloto_muber.md)
 
 ## Objetivo inmediato
 
@@ -190,3 +211,4 @@ Consolidar una base técnica y documental que permita:
 - operar el piloto real
 - alinear GitHub con Notion y con el backend actual en Supabase
 - ejecutar la ruta de 72 horas sin cambios innecesarios de stack
+- usar investigación previa como base para la última iteración antes del piloto
