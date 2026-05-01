@@ -2,6 +2,7 @@
 
 - No sobreexplicar tecnología
 - Primero tracción y flujo real
-- Luego mejora técnica
-- Inventory es posterior al núcleo
-- No usar scanner desde el día 1
+- Luego mas mejoras técnicas
+- Inventory y núcleo son el centro
+- integrar IA en scanner 
+- pago debito, credito, y transferencias con autorizacion del director.

@@ -25,6 +25,7 @@ Estas reglas aplican a:
 Cuando haya dudas entre:
 - algo más elegante técnicamente
 - algo más útil para operar el piloto
+- mesclar para ver un resultado nuevo, innovador.
 
 se prioriza lo que permita operar, verificar y aprender más rápido.
 
@@ -35,6 +36,7 @@ Todo cambio debe responder:
 - qué flujo toca
 - cómo se verifica
 - qué documentación afecta
+- implementar un entregable para analisis de datos
 
 ## Regla de estructura
 

@@ -9,8 +9,8 @@ Journey map del usuario que solicita servicio de mudanza. Flujo base: servicio �
 ## Persona
 
 - **Nombre**: Usuario solicitante
-- **Contexto**: Persona que necesita mudanza, usa app móvil (iOS/Android) o web.
-- **Objetivo**: Solicitar servicio de mudanza, ver progreso en tiempo real, pagar de forma segura.
+- **Contexto**: Persona que necesita mudanza, flete, ultima milla, recoger paquetes usa app móvil (iOS/Android) o web.
+- **Objetivo**: Solicitar servicio de mudanza, flete, ultima milla ver progreso en tiempo real, pagar de forma segura.
 - **Frustraciones actuales**: No saber qué sigue tras solicitar, incertidumbre sobre el precio, confusión en el inventario.
 
 ---

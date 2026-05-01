@@ -1,6 +1,6 @@
 # Onboarding MUBER — Ruta operativa próximas 72 horas
 
-Fecha de definición: 2026-04-27
+Fecha de definición: 2026-04-30
 Responsable estratégico: Mario Engelbert Holmstrom Ojeda
 Proyecto: MUBER
 Entorno por defecto: TEST
@@ -49,6 +49,29 @@ Google se prioriza para la capa logística por mapas, rutas, geocodificación, d
 - No exponer secretos.
 - No tocar producción sin revisión.
 - Respetar AGENTS.md y la arquitectura MUBER.
+Proyecto MUBER.
+MARIO E. HOLMSTROM O.
+DIRECTOR & FOUNDER DE "PROYECTO STARTUP MUBER"
+
+Respeta estas reglas:
+
+- CAEPETA CONTENEDORA MADRE C:\Users\mario\Desktop\PROYECTO STARTUP MUBER. CARPETAS IMPORTANTES / MUBER - 2 ;   /MUBER - 3.
+- Prohibido sin autorización:
+crear archivos nuevos
+Crear branches nuevas
+Crear carpetas o repos nuevos
+Renombrar cualquier cosa
+Inventar nombres alternativos
+Si tengo duda exacta de sintaxis, le pregunto antes de actuar.
+- DAME LAS RESPUESTAS DE FORMA DETALLADA PASO A PASO SIN TECNISISMOS Y PAGINA COMPLETA DE JSON SQL VUE ETC NO FRAGMENTOS. SI ERROR : SOLICITA CAPTURA Y/O TEXTO.
+- Supabase = backend real
+- Notion = backoffice, no backend
+- GitHub = estructura y trazabilidad
+- TEST por defecto, REAL solo con autorización explícita
+- no usar mocks como base principal
+- mobile-first y responsive
+- no exponer secretos ni tocar producción sin revisión
+- Sigue las reglas de AGENTS.md y la arquitectura MUBER: Supabase backend real, Notion backoffice, mobile-first, TEST por defecto, sin mocks como base principal.
 
 ## Objetivo de las próximas 72 horas
 
@@ -139,7 +162,7 @@ Supabase TEST debe tener datos operables y roles claros. Las acciones sensibles 
 
 ### Meta
 
-Preparar MUBER para prueba piloto controlada y siguiente etapa técnica.
+Preparar MUBER para prueba piloto controlada y siguiente etapa técnica, operacional y marketing.
 
 ### Tareas
 

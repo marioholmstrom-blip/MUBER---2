@@ -7,7 +7,7 @@ Si existe conflicto entre este archivo y cualquier resumen corto, prevalece este
 
 ## Estructura del proyecto
 - `MUBER - 2` contiene contexto, documentación, specs, openspec y reglas del sistema.
-- `MUBER -3` contiene el frontend operativo mobile-first conectado al backend.
+- `MUBER - 3` contiene el frontend operativo mobile-first conectado al backend.
 - `SQL` contiene scripts y pruebas SQL de apoyo.
 
 ## Arquitectura obligatoria
@@ -15,7 +15,7 @@ Si existe conflicto entre este archivo y cualquier resumen corto, prevalece este
 - Notion se usa para operación humana, seguimiento, dashboards y backoffice.
 - GitHub se usa para estructura, documentación, control de cambios y trazabilidad.
 - No usar Notion como backend.
-- No mover lógica crítica de negocio al frontend sin una razón clara y validada.
+- No mover lógica crítica de negocio al frontend sin una razón clara y validada y autorizacion del director.
 
 ## Dominio MUBER
 MUBER opera en el espacio de:
@@ -30,7 +30,7 @@ Servicios actuales:
 - `mudanza_asistida`
 
 Regla de flujo base:
-solicitar -> aceptar -> ejecutar -> finalizar -> registrar -> medir
+solicitar -> aceptar -> ejecutar -> pago -> finalizar -> registrar -> medir ->
 
 ## Seguridad
 - La IA acelera trabajo, pero no reemplaza revisión humana.
@@ -50,7 +50,7 @@ solicitar -> aceptar -> ejecutar -> finalizar -> registrar -> medir
 
 ## Rol de Supabase
 - Supabase es la fuente de verdad del backend.
-- Debe respaldar solicitudes, viajes, estados, historial, pagos e inventario cuando aplique.
+- Debe respaldar solicitudes, viajes, estados, historial, pagos e inventario.
 - Toda escritura importante debe poder verificarse en tablas reales.
 - Si la interfaz dice algo distinto a la base, la referencia es Supabase.
 - Todo cambio estructural debe dejar claro qué flujo toca y cómo se verifica.
@@ -83,7 +83,7 @@ solicitar -> aceptar -> ejecutar -> finalizar -> registrar -> medir
 - Responsivo.
 - No asumir que la app es solo móvil, pero diseñar primero para celular.
 - Primero flujo funcional y validado.
-- Después orden técnico.
+- Después orden técnico y frontend.
 - Después nuevas capas o expansión.
 
 ## Criterio final
