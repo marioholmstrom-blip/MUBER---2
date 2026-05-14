@@ -1,9 +1,12 @@
+
 # codex.md
 
 ## Uso esperado
+
 Codex debe trabajar con foco técnico y cambios mínimos seguros.
 
 ## Orden recomendado
+
 1. leer `README.md`
 2. leer `docs/`
 3. leer reglas en `ai-specs/specs/`
@@ -11,12 +14,14 @@ Codex debe trabajar con foco técnico y cambios mínimos seguros.
 5. revisar spec o change relevante en `openspec/`
 
 ## Regla crítica
-No introducir complejidad innecesaria en MUBER 2. El repositorio está orientado a piloto funcional, no a sobrearquitectura.
+
+No introducir complejidad innecesaria en MUBER 2 O MUBER 3. El repositorio está orientado a piloto funcional, no a sobrearquitectura.
+
 # codex.md
 
 ## Propósito
 
-Codex debe usar este repositorio como fuente estructural de trabajo para MUBER 2.
+Codex debe usar este repositorio como fuente estructural de trabajo para MUBER 2 Y MUBER 3.
 
 Su función principal es ayudar a ejecutar cambios técnicos concretos sin romper la lógica del proyecto.
 
@@ -47,7 +52,7 @@ Antes de cambiar algo, Codex debe revisar:
 
 ## Qué debe entender del proyecto
 
-MUBER 2 hoy gira en torno a estos dominios:
+MUBER 2 Y MUBER 3 hoy gira en torno a estos dominios:
 
 - requests
 - trips
@@ -64,12 +69,17 @@ Y a estos flujos:
 - se crea trip
 - se actualiza trip_status
 - el estado se refleja en pantallas
+- EL DRIVER FINALIZA EL VIAJE
+- EL USER CONFIRMA EL PAGO
+- SE REGISTRAN LOS DATOS
+- EL SERVICIO SE COMPLETA
 
 ---
 
 ## Qué debe priorizar Codex
 
 ### Alta prioridad
+
 - estabilidad del flujo
 - consistencia de datos
 - actualización correcta de estados
@@ -77,11 +87,13 @@ Y a estos flujos:
 - verificación en Supabase
 
 ### Media prioridad
+
 - limpieza de nombres
 - orden del repositorio
 - documentación técnica ligada al cambio
 
-### Baja prioridad
+### MEDIA prioridad
+
 - refinamientos estéticos que no cambien la operación real
 
 ---
@@ -89,14 +101,18 @@ Y a estos flujos:
 ## Reglas para tocar código
 
 ### Si toca frontend
+
 Debe revisar:
+
 - qué pantalla afecta
 - qué estado modifica
 - qué tabla usa
 - cómo se verá en User, Assisted o Driver
 
 ### Si toca Supabase
+
 Debe revisar:
+
 - tabla afectada
 - campos afectados
 - impacto en requests, trips o tracking
@@ -104,7 +120,9 @@ Debe revisar:
 - cómo verificar el resultado
 
 ### Si toca documentación
+
 Debe actualizar:
+
 - `docs/`
 - `ai-specs/specs/`
 - `openspec/` si el cambio lo justifica
@@ -114,6 +132,7 @@ Debe actualizar:
 ## Reglas para responder
 
 Codex debe:
+
 - ser preciso
 - dar pasos accionables
 - evitar ambigüedad
@@ -121,6 +140,7 @@ Codex debe:
 - indicar cómo verificar
 
 Codex no debe:
+
 - asumir cosas no confirmadas
 - prometer integraciones no hechas
 - mezclar cambios múltiples sin control
@@ -130,9 +150,10 @@ Codex no debe:
 
 ## Relación con Notion
 
-Aunque Codex trabaja principalmente sobre GitHub y código, debe recordar que MUBER 2 también vive en Notion.
+Aunque Codex trabaja principalmente sobre GitHub y código, debe recordar que MUBER 2 Y MUBER 3 también vive en Notion.
 
 Por eso, cuando un cambio afecte:
+
 - operación
 - métricas
 - estructura documental
