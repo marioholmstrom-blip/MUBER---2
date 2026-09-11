@@ -161,31 +161,15 @@
         <p class="eyebrow" id="eyebrow">Conecta tu cuenta</p>
         <h1 id="title">¿No tienes cuenta Mercado Pago?</h1>
         <p class="message" id="message">Puedes crear una cuenta en Mercado Pago y luego volver a MUBER para conectarla.</p>
-        <a class="primary-action" id="primary-action" href="https://www.mercadopago.cl/hub/registration/landing" rel="noopener noreferrer">Crear cuenta Mercado Pago</a>
+        <a class="primary-action" href="https://www.mercadopago.cl/hub/registration/landing" rel="noopener noreferrer">Crear cuenta Mercado Pago</a>
         <p class="return-copy" id="return-copy">Vuelve a MUBER e intenta conectar tu cuenta nuevamente.</p>
       </div>
     </section>
   </main>
   <script>
     (() => {
-      const params = new URLSearchParams(window.location.search);
-      const result = params.get('result');
-      const environment = params.get('environment');
-      const isTest = environment === 'test';
-      const appReturnUrl = result === 'success'
-        ? 'com.mubercargo.test://driver-application?mercadopago=connected'
-        : 'com.mubercargo.test://driver-application?mercadopago=retry';
-      const primaryAction = document.getElementById('primary-action');
-
-      if (result !== 'success') {
-        if (isTest) {
-          primaryAction.href = appReturnUrl;
-          primaryAction.removeAttribute('target');
-          primaryAction.removeAttribute('rel');
-          primaryAction.textContent = 'Volver a MUBER';
-        }
-        return;
-      }
+      const result = new URLSearchParams(window.location.search).get('result');
+      if (result !== 'success') return;
 
       const card = document.getElementById('result-card');
       card.classList.add('success');
@@ -194,10 +178,6 @@
       document.getElementById('message').textContent = 'Tu cuenta quedó conectada correctamente para recibir pagos en MUBER.';
       document.getElementById('return-copy').textContent = 'Ya puedes volver a MUBER y continuar con tu postulación.';
       document.querySelector('.status-icon').innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"></path></svg>';
-
-      if (isTest) {
-        window.setTimeout(() => window.location.replace(appReturnUrl), 900);
-      }
     })();
   </script>
 </body>
