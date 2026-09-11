@@ -131,9 +131,6 @@
       font-weight: 750;
       line-height: 1.45;
     }
-    .success .status-icon { background: #e8f8f1; color: #159b67; }
-    .success .eyebrow { color: #159b67; }
-    .success .primary-action { display: none; }
     @media (max-width: 370px) {
       .brands { gap: 10px; }
       .muber-logo { width: 132px; }
@@ -166,19 +163,5 @@
       </div>
     </section>
   </main>
-  <script>
-    (() => {
-      const result = new URLSearchParams(window.location.search).get('result');
-      if (result !== 'success') return;
-
-      const card = document.getElementById('result-card');
-      card.classList.add('success');
-      document.getElementById('eyebrow').textContent = 'Conexión completada';
-      document.getElementById('title').textContent = 'Cuenta Mercado Pago conectada';
-      document.getElementById('message').textContent = 'Tu cuenta quedó conectada correctamente para recibir pagos en MUBER.';
-      document.getElementById('return-copy').textContent = 'Ya puedes volver a MUBER y continuar con tu postulación.';
-      document.querySelector('.status-icon').innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"></path></svg>';
-    })();
-  </script>
 </body>
 </html>
