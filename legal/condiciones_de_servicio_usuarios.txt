@@ -101,3 +101,8 @@ MUBER está legalmente configurada como una plataforma de transporte de carga li
 9. RESOLUCIÓN DE DISPUTAS Y JURISDICCIÓN
 
 Para cualquier controversia derivada del uso de la Plataforma o la interpretación de estas condiciones, las partes acuerdan intentar resolver el conflicto de mutuo acuerdo mediante el centro de soporte de la Plataforma. En caso de no llegar a acuerdo, cualquier acción legal será sometida a la jurisdicción ordinaria de los tribunales de justicia competentes de la comuna y ciudad de Valparaíso, Chile.
+
+
+10. PRIVACIDAD Y USO DE DATOS
+
+MUBER recopila y trata únicamente los datos personales necesarios para crear y administrar cuentas, prestar y mejorar sus servicios, procesar solicitudes, pagos y soporte, prevenir fraudes y cumplir obligaciones legales. Cuando el Usuario conecta voluntariamente su cuenta de TikTok, MUBER puede recibir los datos básicos y permisos que el Usuario autorice expresamente, y los utilizará solo para autenticar la cuenta y permitir que el Usuario cargue o publique en TikTok el contenido que seleccione. MUBER no vende datos personales ni publica contenido sin autorización del Usuario; aplica medidas razonables de seguridad y conserva la información solo durante el tiempo necesario para estas finalidades. El Usuario puede revocar el acceso desde TikTok y solicitar acceso, rectificación o eliminación de sus datos escribiendo a contacto@muber.cl. El uso de TikTok también se encuentra sujeto a los términos y políticas de privacidad de TikTok.
