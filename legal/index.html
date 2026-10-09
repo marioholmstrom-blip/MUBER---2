@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>MUBER - Centro Legal</title>
+<style>
+:root{--blue:#0B5FFF;--dark:#0F172A;--gray:#64748B;--bg:#F8FAFC}
+*{box-sizing:border-box}body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:var(--bg);color:var(--dark);line-height:1.6}
+.header{padding:24px 20px;background:white;border-bottom:1px solid #E2E8F0;position:sticky;top:0;z-index:10}
+.header .wrap,.container{max-width:900px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px;letter-spacing:-0.02em}
+.brand span{background:var(--blue);color:white;padding:6px 10px;border-radius:8px}
+.badge{display:inline-flex;padding:4px 10px;border-radius:999px;background:#E0E7FF;color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.05em}
+.hero{padding:40px 20px 20px}.hero h1{font-size:32px;line-height:1.1;margin:12px 0 8px;letter-spacing:-0.03em}.hero p{color:var(--gray);font-size:16px;max-width:640px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;padding:20px}
+.card{background:white;border:1px solid #E2E8F0;border-radius:16px;padding:20px;transition:.15s}.card:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(11,95,255,.12)}
+.card h3{margin:0 0 6px;font-size:18px}.card p{margin:0 0 14px;color:var(--gray);font-size:14px}
+.btn{display:inline-flex;align-items:center;gap:6px;background:var(--blue);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px}
+.btn.secondary{background:white;color:var(--dark);border:1px solid #E2E8F0}
+.prose{background:white;border:1px solid #E2E8F0;border-radius:16px;padding:28px;margin:20px;max-width:900px}
+.prose h2{margin-top:32px}.prose h3{margin-top:20px}
+.notice{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:12px;padding:14px 16px;margin:16px 0;color:#1E40AF;font-size:14px}
+.footer{padding:32px 20px;text-align:center;color:var(--gray);font-size:13px}
+a{color:var(--blue)}code{background:#F1F5F9;padding:2px 6px;border-radius:6px}
+</style>
+</head>
+<body>
+<div class="header"><div class="wrap"><div class="brand"><span>MUBER</span> Centro Legal</div></div></div>
+<div class="container">
+<div class="hero">
+<span class="badge">ACEPTACIÓN ÚNICA</span>
+<h1>Un solo check para todo.<br/>Lee y gestiona cuando quieras.</h1>
+<p>En MUBER diseñamos el checkout con 0 fricción. Al marcar <strong>“Acepto las Condiciones de servicio y Política de Privacidad”</strong> en el resumen de tu mudanza, aceptas todos los documentos abajo. Si quieres leer en detalle o pedir eliminación de datos, entra desde aquí en cualquier momento.</p>
+<div class="notice"><strong>Flujo del Paso 4:</strong> Check desmarcado por defecto → CTA “Solicitar viaje” deshabilitado hasta aceptar → Este hub abre al hacer click en el enlace.</div>
+</div>
+<div class="grid">
+<div class="card"><h3>Condiciones Usuario</h3><p>Reglas para quien solicita mudanza o transporte. Tarifas, cancelaciones, responsabilidades.</p><a class="btn" href="./condiciones-usuario.html">Ver condiciones</a></div>
+<div class="card"><h3>Condiciones Choferes</h3><p>Reglas para conductores, vehículos, pagos, comisiones y conducta.</p><a class="btn" href="./condiciones-choferes.html">Ver condiciones</a></div>
+<div class="card"><h3>Política de Privacidad</h3><p>Qué datos recolectamos, uso de Meta Login, derechos ARCO, retención.</p><a class="btn" href="./privacidad.html">Ver privacidad</a></div>
+<div class="card"><h3>Eliminación de Datos</h3><p>Solicita borrado total de cuenta y datos según art. 17 GDPR / Ley Chile.</p><a class="btn secondary" href="./eliminacion-datos.html">Solicitar borrado</a></div>
+</div>
+<div class="prose">
+<h2>¿Cómo funciona el consentimiento?</h2>
+<p>Este es el patrón de <strong>divulgación por capas</strong> recomendado por Google Play y App Store:</p>
+<ul>
+<li><strong>Capa 1 (en la app):</strong> Un solo checkbox no marcado + link a este hub. Botón deshabilitado hasta aceptar.</li>
+<li><strong>Capa 2 (aquí):</strong> Todo el detalle legal por separado, disponible siempre en <code>mubercargo.com/legal/</code></li>
+</ul>
+<p>Guardamos en Supabase: <code>consent_version: 2026-05</code>, <code>accepted_at</code> y <code>ip_hash</code>.</p>
+</div>
+</div>
+<div class="footer">© 2026 MUBER SpA · Valparaíso, Chile · <a href="https://mubercargo.com">mubercargo.com</a></div>
+</body>
+</html>
