@@ -1,0 +1,25 @@
+{
+  "routes": [
+    {
+      "route": "/legal",
+      "redirect": "/legal/index.html",
+      "statusCode": 301
+    },
+    {
+      "route": "/legal/*",
+      "headers": {
+        "cache-control": "public, max-age=3600"
+      }
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/legal/index.html",
+    "exclude": [
+      "/legal/*",
+      "/*.{html,css,js,json,png,jpg,jpeg,gif,svg,ico}"
+    ]
+  },
+  "mimeTypes": {
+    ".html": "text/html"
+  }
+}
