@@ -1,0 +1,16 @@
+{
+  "routes": [
+    {
+      "route": "/legal",
+      "redirect": "/legal/index.html",
+      "statusCode": 301
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "/legal/*",
+      "/*.{css,js,json,png,jpg,jpeg,gif,svg,ico}"
+    ]
+  }
+}
