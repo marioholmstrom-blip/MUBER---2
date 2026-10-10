@@ -1,37 +1,315 @@
-<!doctype html><html lang="es-CL"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Eliminación de Datos | MUBER</title><style>
-:root{--blue:#0B5FFF;--dark:#0F172A;--gray:#64748B;--bg:#F8FAFC}
-*{box-sizing:border-box}body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:var(--bg);color:var(--dark);line-height:1.6}
-.header{padding:24px 20px;background:white;border-bottom:1px solid #E2E8F0;position:sticky;top:0;z-index:10}
-.header .wrap,.container{max-width:900px;margin:0 auto}
-.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px;letter-spacing:-0.02em}
-.brand span{background:var(--blue);color:white;padding:6px 10px;border-radius:8px}
-.badge{display:inline-flex;padding:4px 10px;border-radius:999px;background:#E0E7FF;color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.05em}
-.hero{padding:40px 20px 20px}.hero h1{font-size:32px;line-height:1.1;margin:12px 0 8px;letter-spacing:-0.03em}.hero p{color:var(--gray);font-size:16px;max-width:640px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;padding:20px}
-.card{background:white;border:1px solid #E2E8F0;border-radius:16px;padding:20px;transition:.15s}.card:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(11,95,255,.12)}
-.card h3{margin:0 0 6px;font-size:18px}.card p{margin:0 0 14px;color:var(--gray);font-size:14px}
-.btn{display:inline-flex;align-items:center;gap:6px;background:var(--blue);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px}
-.btn.secondary{background:white;color:var(--dark);border:1px solid #E2E8F0}
-.prose{background:white;border:1px solid #E2E8F0;border-radius:16px;padding:28px;margin:20px;max-width:900px}
-.prose h2{margin-top:32px}.prose h3{margin-top:20px}
-.notice{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:12px;padding:14px 16px;margin:16px 0;color:#1E40AF;font-size:14px}
-.footer{padding:32px 20px;text-align:center;color:var(--gray);font-size:13px}
-a{color:var(--blue)}code{background:#F1F5F9;padding:2px 6px;border-radius:6px}
-</style></head>
-<body><div class="header"><div class="wrap"><div class="brand"><span>MUBER</span> Eliminación</div><a href="./">← Volver al hub</a></div></div>
-<div class="container"><div class="prose">
-<h1>Solicitud de Eliminación de Datos</h1>
-<div class="notice">Si iniciaste sesión con Facebook/Instagram y quieres borrar todo rastro, este es tu portal conforme a Meta Data Deletion Callback.</div>
-<h2>Opción 1 - Formulario automático (recomendado)</h2>
-<p>Envía email a <strong>privacidad@mubercargo.com</strong> con asunto <code>BORRAR MIS DATOS - [tu email]</code>. Plazo: 7 días hábiles. Incluye eliminación en Supabase, Auth y MercadoPago tokens.</p>
-<h2>Opción 2 - Meta Data Deletion Instruction</h2>
-<p>Si usaste Login con Facebook:</p>
-<ol>
-<li>Ve a Facebook > Configuración > Apps y sitios web</li>
-<li>Elimina MUBER</li>
-<li>Nuestro endpoint recibe el <code>signed_request</code> y borra automáticamente: <code>POST /api/meta/data-deletion</code></li>
-</ol>
-<p>Respuesta JSON según spec Meta: <code>{"url": "https://mubercargo.com/legal/eliminacion-datos.html?id=xxx", "confirmation_code": "MUBER-DEL-xxx"}</code></p>
-<h2>Qué se borra</h2><p>Cuenta, historial de viajes, mensajes, geolocalización, tokens de pago. Conservamos solo lo exigido por SII (facturación) anonimizado.</p>
-<a class="btn" href="mailto:privacidad@mubercargo.com?subject=BORRAR%20MIS%20DATOS">Solicitar borrado por email</a>
-</div></div><div class="footer">MUBER SpA</div></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUBER — Solicitud de Eliminación de Datos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --mub-bg: #0A192F;
+      --mub-card: #112240;
+      --mub-accent: #D4A373;
+      --mub-text-light: #E2E8F0;
+      --mub-text-muted: #94A3B8;
+      --mub-success: #10B981;
+      --mub-danger: #EF4444;
+      --mub-border: rgba(212, 163, 115, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, sans-serif;
+    }
+
+    body {
+      background-color: var(--mub-bg);
+      color: var(--mub-text-light);
+      line-height: 1.6;
+      padding: 24px 16px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 680px;
+      background: var(--mub-card);
+      border: 1px solid var(--mub-border);
+      border-radius: 20px;
+      padding: 36px 28px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 28px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 20px;
+    }
+
+    .logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      display: inline-block;
+    }
+
+    .logo span {
+      color: var(--mub-accent);
+    }
+
+    .tagline {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--mub-text-muted);
+      margin-top: -4px;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 20px 0 8px;
+      color: #FFFFFF;
+      text-align: center;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 14px;
+      color: var(--mub-text-muted);
+      margin-bottom: 24px;
+    }
+
+    .info-box {
+      background: rgba(10, 25, 47, 0.6);
+      border-left: 4px solid var(--mub-accent);
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      font-size: 14px;
+      color: var(--mub-text-light);
+    }
+
+    .info-box ul {
+      margin-left: 20px;
+      margin-top: 8px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--mub-text-light);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      background: #0A192F;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      color: #FFFFFF;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--mub-accent);
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      background: var(--mub-accent);
+      color: #0A192F;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.1s, opacity 0.2s;
+      margin-top: 8px;
+    }
+
+    .btn-submit:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+
+    /* Mensaje de confirmación en pantalla */
+    .success-card {
+      display: none;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid var(--mub-success);
+      padding: 28px 20px;
+      border-radius: 14px;
+      text-align: center;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .success-icon {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+
+    .success-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--mub-success);
+      margin-bottom: 10px;
+    }
+
+    .success-desc {
+      font-size: 15px;
+      color: var(--mub-text-light);
+      margin-bottom: 14px;
+    }
+
+    .ticket-id {
+      display: inline-block;
+      background: #0A192F;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-family: monospace;
+      font-size: 13px;
+      color: var(--mub-accent);
+      border: 1px solid var(--mub-border);
+    }
+
+    .direct-contact {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--mub-text-muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 20px;
+    }
+
+    .direct-contact a {
+      color: var(--mub-accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="logo">MU<span>BER</span></div>
+      <div class="tagline">Logística y Mudanza Asistida</div>
+    </header>
+
+    <h1>Instrucciones para Eliminación de Datos de Usuario</h1>
+    <p class="subtitle">Cumplimiento de estándares de Meta Platform y Google Play Store</p>
+
+    <div class="info-box">
+      <strong>Política de eliminación de cuenta:</strong>
+      <p>Al procesar su solicitud, MUBER eliminará de manera irreversible:</p>
+      <ul>
+        <li>Información de perfil (nombre, teléfono, correo electrónico).</li>
+        <li>Historial de trayectos, ubicaciones y cotizaciones registradas.</li>
+        <li>Credenciales de acceso asociadas a Facebook Login o correo.</li>
+      </ul>
+      <p style="margin-top: 8px; font-size: 12px; color: var(--mub-text-muted);">*Los comprobantes de pago emitidos se conservan según los plazos legales tributarios.</p>
+    </div>
+
+    <!-- Formulario para el flujo del video -->
+    <form id="deletionForm">
+      <div class="form-group">
+        <label for="fullName">Nombre completo registrado:</label>
+        <input type="text" id="fullName" required placeholder="Ej: Mario Holmstrom">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Correo electrónico de la cuenta:</label>
+        <input type="email" id="email" required placeholder="tu-correo@ejemplo.com">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Teléfono móvil registrado:</label>
+        <input type="tel" id="phone" required placeholder="+56 9 1234 5678">
+      </div>
+
+      <div class="form-group">
+        <label for="userType">Tipo de cuenta en MUBER:</label>
+        <select id="userType" required>
+          <option value="usuario">Usuario / Cliente</option>
+          <option value="chofer">Conductor / Chofer</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="reason">Motivo (Opcional):</label>
+        <textarea id="reason" rows="2" placeholder="Indícanos si deseas eliminar la cuenta por completo."></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit" id="submitBtn">
+        🗑️ Solicitar eliminación de mi cuenta y datos
+      </button>
+    </form>
+
+    <!-- Cartel interactivo de confirmación en pantalla -->
+    <div id="successCard" class="success-card">
+      <div class="success-icon">✅</div>
+      <div class="success-title">Tu solicitud ha sido recibida con éxito</div>
+      <div class="success-desc">
+        Tu solicitud ha sido recibida y será procesada en un plazo máximo de <strong>48 horas</strong>. Recibirás una notificación de confirmación en tu correo.
+      </div>
+      <div>
+        <span class="ticket-id" id="ticketNumber">ID: MUB-DEL-89421</span>
+      </div>
+    </div>
+
+    <div class="direct-contact">
+      ¿Prefieres solicitarlo por correo directo? Escríbenos a:<br>
+      <a id="mailLink" href="mailto:privacidadatos@mubercargo.com?subject=Solicitud%20de%20Eliminación%20de%20Datos%20-%20MUBER&body=Hola,%20solicito%20la%20eliminación%20completa%20de%20mi%20cuenta%20y%20datos%20en%20MUBER.">
+        privacidadatos@mubercargo.com
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('deletionForm');
+    const successCard = document.getElementById('successCard');
+    const ticketSpan = document.getElementById('ticketNumber');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Generar un número de ticket dinámico para la prueba visual
+      const randomTicket = 'MUB-DEL-' + Math.floor(10000 + Math.random() * 90000);
+      ticketSpan.textContent = 'ID de Solicitud: ' + randomTicket;
+
+      // Ocultar formulario y mostrar mensaje de confirmación en pantalla
+      form.style.display = 'none';
+      successCard.style.display = 'block';
+
+      // Scrollear suavemente al mensaje
+      successCard.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
