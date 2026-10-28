@@ -1,1 +1,7 @@
 web-dist/
+
+landings/node_modules/
+landings/.next/
+landings/out/
+landings/next-env.d.ts
+landings/tsconfig.tsbuildinfo

@@ -1,0 +1,354 @@
+[
+  {
+    "route": "/choferes/",
+    "width": 390,
+    "status": 200,
+    "title": "Conduce con MUBER | Inscripción de choferes",
+    "h1": "Tu vehículo puede llevarte más lejos.",
+    "viewport": 390,
+    "scrollWidth": 390,
+    "brokenImages": [],
+    "links": [
+      {
+        "label": "",
+        "href": "#inicio"
+      },
+      {
+        "label": "Beneficios",
+        "href": "#beneficios"
+      },
+      {
+        "label": "Cómo funciona",
+        "href": "#como-funciona"
+      },
+      {
+        "label": "Requisitos",
+        "href": "#requisitos"
+      },
+      {
+        "label": "Quiero ser chofer",
+        "href": "/descargar"
+      },
+      {
+        "label": "Comenzar mi inscripción",
+        "href": "/descargar"
+      },
+      {
+        "label": "Conoce cómo funciona ↓",
+        "href": "#como-funciona"
+      },
+      {
+        "label": "Iniciar inscripción",
+        "href": "/descargar"
+      },
+      {
+        "label": "Comunidad MUBER",
+        "href": "mailto:contacto@muber.cl?subject=Quiero%20ser%20parte%20de%20la%20comunidad%20MUBER"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "route": "/usuarios/",
+    "width": 390,
+    "status": 200,
+    "title": "MUBER | Fletes y traslados sin estrés",
+    "h1": "Mueve lo que necesitas. Sin estrés.",
+    "viewport": 390,
+    "scrollWidth": 390,
+    "brokenImages": [],
+    "links": [
+      {
+        "label": "",
+        "href": "#inicio"
+      },
+      {
+        "label": "Servicios",
+        "href": "#servicios"
+      },
+      {
+        "label": "Cómo funciona",
+        "href": "#como-funciona"
+      },
+      {
+        "label": "Cobertura",
+        "href": "#cobertura"
+      },
+      {
+        "label": "Conoce cómo funciona",
+        "href": "/usuarios/como-funciona"
+      },
+      {
+        "label": "Quiero solicitar un flete",
+        "href": "https://d18larf2bvzqi8.cloudfront.net/public/landings/downloads/muber-piloto-controlado-real-b6f66f94.apk"
+      },
+      {
+        "label": "Quiero ser chofer",
+        "href": "/choferes/"
+      },
+      {
+        "label": "Quiero solicitar un flete",
+        "href": "https://d18larf2bvzqi8.cloudfront.net/public/landings/downloads/muber-piloto-controlado-real-b6f66f94.apk"
+      },
+      {
+        "label": "Quiero ser chofer",
+        "href": "/choferes/"
+      },
+      {
+        "label": "Comunidad MUBER",
+        "href": "mailto:contacto@muber.cl?subject=Quiero%20ser%20parte%20de%20la%20comunidad%20MUBER"
+      },
+      {
+        "label": "mubercargo.com",
+        "href": "/"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "route": "/usuarios/como-funciona/",
+    "width": 390,
+    "status": 200,
+    "title": "Cómo funciona MUBER | Solicita y sigue tu flete",
+    "h1": "Así funciona tu flete en MUBER.",
+    "viewport": 390,
+    "scrollWidth": 390,
+    "brokenImages": [],
+    "links": [
+      {
+        "label": "",
+        "href": "/usuarios"
+      },
+      {
+        "label": "Volver",
+        "href": "/usuarios"
+      },
+      {
+        "label": "Quiero solicitar un flete",
+        "href": "https://d18larf2bvzqi8.cloudfront.net/public/landings/downloads/muber-piloto-controlado-real-b6f66f94.apk"
+      },
+      {
+        "label": "Quiero ser chofer",
+        "href": "/choferes/"
+      },
+      {
+        "label": "Comunidad MUBER",
+        "href": "mailto:contacto@muber.cl?subject=Quiero%20ser%20parte%20de%20la%20comunidad%20MUBER"
+      },
+      {
+        "label": "mubercargo.com",
+        "href": "/"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "route": "/descargar/",
+    "width": 390,
+    "status": 200,
+    "title": "Descarga MUBER | Inscripción de choferes",
+    "h1": "Descarga MUBER y comienza tu inscripción.",
+    "viewport": 390,
+    "scrollWidth": 390,
+    "brokenImages": [],
+    "links": [
+      {
+        "label": "",
+        "href": "/choferes/"
+      },
+      {
+        "label": "Volver",
+        "href": "/choferes/"
+      },
+      {
+        "label": "Descargar MUBER",
+        "href": "https://d18larf2bvzqi8.cloudfront.net/public/landings/downloads/muber-piloto-controlado-real-b6f66f94.apk"
+      },
+      {
+        "label": "Descargar aplicación",
+        "href": "https://d18larf2bvzqi8.cloudfront.net/public/landings/downloads/muber-piloto-controlado-real-b6f66f94.apk"
+      },
+      {
+        "label": "Comunidad MUBER",
+        "href": "mailto:contacto@muber.cl?subject=Quiero%20ser%20parte%20de%20la%20comunidad%20MUBER"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "route": "/choferes/",
+    "width": 1440,
+    "status": 200,
+    "title": "Conduce con MUBER | Inscripción de choferes",
+    "h1": "Tu vehículo puede llevarte más lejos.",
+    "viewport": 1440,
+    "scrollWidth": 1440,
+    "brokenImages": [],
+    "links": [
+      {
+        "label": "",
+        "href": "#inicio"
+      },
+      {
+        "label": "Beneficios",
+        "href": "#beneficios"
+      },
+      {
+        "label": "Cómo funciona",
+        "href": "#como-funciona"
+      },
+      {
+        "label": "Requisitos",
+        "href": "#requisitos"
+      },
+      {
+        "label": "Quiero ser chofer",
+        "href": "/descargar"
+      },
+      {
+        "label": "Comenzar mi inscripción",
+        "href": "/descargar"
+      },
+      {
+        "label": "Conoce cómo funciona ↓",
+        "href": "#como-funciona"
+      },
+      {
+        "label": "Iniciar inscripción",
+        "href": "/descargar"
+      },
+      {
+        "label": "Comunidad MUBER",
+        "href": "mailto:contacto@muber.cl?subject=Quiero%20ser%20parte%20de%20la%20comunidad%20MUBER"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "route": "/usuarios/",
+    "width": 1440,
+    "status": 200,
+    "title": "MUBER | Fletes y traslados sin estrés",
+    "h1": "Mueve lo que necesitas. Sin estrés.",
+    "viewport": 1440,
+    "scrollWidth": 1440,
+    "brokenImages": [],
+    "links": [
+      {
+        "label": "",
+        "href": "#inicio"
+      },
+      {
+        "label": "Servicios",
+        "href": "#servicios"
+      },
+      {
+        "label": "Cómo funciona",
+        "href": "#como-funciona"
+      },
+      {
+        "label": "Cobertura",
+        "href": "#cobertura"
+      },
+      {
+        "label": "Conoce cómo funciona",
+        "href": "/usuarios/como-funciona"
+      },
+      {
+        "label": "Quiero solicitar un flete",
+        "href": "https://d18larf2bvzqi8.cloudfront.net/public/landings/downloads/muber-piloto-controlado-real-b6f66f94.apk"
+      },
+      {
+        "label": "Quiero ser chofer",
+        "href": "/choferes/"
+      },
+      {
+        "label": "Quiero solicitar un flete",
+        "href": "https://d18larf2bvzqi8.cloudfront.net/public/landings/downloads/muber-piloto-controlado-real-b6f66f94.apk"
+      },
+      {
+        "label": "Quiero ser chofer",
+        "href": "/choferes/"
+      },
+      {
+        "label": "Comunidad MUBER",
+        "href": "mailto:contacto@muber.cl?subject=Quiero%20ser%20parte%20de%20la%20comunidad%20MUBER"
+      },
+      {
+        "label": "mubercargo.com",
+        "href": "/"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "route": "/usuarios/como-funciona/",
+    "width": 1440,
+    "status": 200,
+    "title": "Cómo funciona MUBER | Solicita y sigue tu flete",
+    "h1": "Así funciona tu flete en MUBER.",
+    "viewport": 1440,
+    "scrollWidth": 1440,
+    "brokenImages": [],
+    "links": [
+      {
+        "label": "",
+        "href": "/usuarios"
+      },
+      {
+        "label": "Volver",
+        "href": "/usuarios"
+      },
+      {
+        "label": "Quiero solicitar un flete",
+        "href": "https://d18larf2bvzqi8.cloudfront.net/public/landings/downloads/muber-piloto-controlado-real-b6f66f94.apk"
+      },
+      {
+        "label": "Quiero ser chofer",
+        "href": "/choferes/"
+      },
+      {
+        "label": "Comunidad MUBER",
+        "href": "mailto:contacto@muber.cl?subject=Quiero%20ser%20parte%20de%20la%20comunidad%20MUBER"
+      },
+      {
+        "label": "mubercargo.com",
+        "href": "/"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "route": "/descargar/",
+    "width": 1440,
+    "status": 200,
+    "title": "Descarga MUBER | Inscripción de choferes",
+    "h1": "Descarga MUBER y comienza tu inscripción.",
+    "viewport": 1440,
+    "scrollWidth": 1440,
+    "brokenImages": [],
+    "links": [
+      {
+        "label": "",
+        "href": "/choferes/"
+      },
+      {
+        "label": "Volver",
+        "href": "/choferes/"
+      },
+      {
+        "label": "Descargar MUBER",
+        "href": "https://d18larf2bvzqi8.cloudfront.net/public/landings/downloads/muber-piloto-controlado-real-b6f66f94.apk"
+      },
+      {
+        "label": "Descargar aplicación",
+        "href": "https://d18larf2bvzqi8.cloudfront.net/public/landings/downloads/muber-piloto-controlado-real-b6f66f94.apk"
+      },
+      {
+        "label": "Comunidad MUBER",
+        "href": "mailto:contacto@muber.cl?subject=Quiero%20ser%20parte%20de%20la%20comunidad%20MUBER"
+      }
+    ],
+    "errors": []
+  }
+]

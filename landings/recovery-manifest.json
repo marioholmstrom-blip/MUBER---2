@@ -1,0 +1,141 @@
+{
+  "source": "Original chat history; historical file snapshots and successful patches",
+  "files": [
+    "package.json",
+    "app/descargar/page.tsx",
+    "app/globals.css",
+    "app/layout.tsx",
+    "app/page.tsx",
+    "app/usuarios/page.tsx",
+    "app/usuarios/usuarios.module.css",
+    "app/usuarios/como-funciona/page.tsx"
+  ],
+  "events": [
+    {
+      "line": 2880,
+      "file": "package.json",
+      "action": "snapshot"
+    },
+    {
+      "line": 2890,
+      "file": "app/descargar/page.tsx",
+      "action": "snapshot"
+    },
+    {
+      "line": 2891,
+      "file": "app/globals.css",
+      "action": "snapshot"
+    },
+    {
+      "line": 2892,
+      "file": "app/layout.tsx",
+      "action": "snapshot"
+    },
+    {
+      "line": 2893,
+      "file": "app/page.tsx",
+      "action": "snapshot"
+    },
+    {
+      "line": 6498,
+      "file": "app/usuarios/page.tsx",
+      "action": "add"
+    },
+    {
+      "line": 6498,
+      "file": "app/usuarios/usuarios.module.css",
+      "action": "add"
+    },
+    {
+      "line": 6627,
+      "file": "app/usuarios/usuarios.module.css",
+      "action": "update"
+    },
+    {
+      "line": 6670,
+      "file": "app/usuarios/usuarios.module.css",
+      "action": "update"
+    },
+    {
+      "line": 6826,
+      "file": "app/usuarios/page.tsx",
+      "action": "update"
+    },
+    {
+      "line": 6826,
+      "file": "app/usuarios/como-funciona/page.tsx",
+      "action": "add"
+    },
+    {
+      "line": 6826,
+      "file": "app/page.tsx",
+      "action": "update"
+    },
+    {
+      "line": 6826,
+      "file": "app/descargar/page.tsx",
+      "action": "update"
+    },
+    {
+      "line": 6837,
+      "file": "app/usuarios/usuarios.module.css",
+      "action": "update"
+    },
+    {
+      "line": 6837,
+      "file": "app/globals.css",
+      "action": "update"
+    },
+    {
+      "line": 6867,
+      "file": "app/usuarios/page.tsx",
+      "action": "update"
+    },
+    {
+      "line": 6867,
+      "file": "app/usuarios/como-funciona/page.tsx",
+      "action": "update"
+    },
+    {
+      "line": 6927,
+      "file": "app/usuarios/usuarios.module.css",
+      "action": "update"
+    },
+    {
+      "line": 6927,
+      "file": "app/usuarios/page.tsx",
+      "action": "update"
+    },
+    {
+      "line": 6973,
+      "file": "app/usuarios/page.tsx",
+      "action": "update"
+    },
+    {
+      "line": 7021,
+      "file": "app/usuarios/page.tsx",
+      "action": "update"
+    },
+    {
+      "line": 7021,
+      "file": "app/usuarios/como-funciona/page.tsx",
+      "action": "update"
+    },
+    {
+      "line": 7406,
+      "file": "app/usuarios/como-funciona/page.tsx",
+      "action": "update"
+    },
+    {
+      "line": 7406,
+      "file": "app/usuarios/page.tsx",
+      "action": "update"
+    },
+    {
+      "line": 7483,
+      "file": "app/usuarios/usuarios.module.css",
+      "action": "update"
+    }
+  ],
+  "fail": []
+}

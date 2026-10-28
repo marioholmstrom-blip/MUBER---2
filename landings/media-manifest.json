@@ -1,0 +1,13 @@
+{
+  "source": "Original landing media, unchanged binary files",
+  "apk": {
+    "url": "https://d18larf2bvzqi8.cloudfront.net/public/landings/downloads/muber-piloto-controlado-real-b6f66f94.apk",
+    "bytes": 116423633,
+    "sha256": "d6c95d554a0cad97ff489d46c85e9bb06e127fce7a82c3ab4f41a58df0351682"
+  },
+  "video": {
+    "url": "https://d18larf2bvzqi8.cloudfront.net/public/landings/media/muber-como-funciona-20260915.mp4",
+    "bytes": 39374259,
+    "sha256": "0151c55e7038399910a2a4308c6728ea38a536993b2bec87d3cd09defba0f50d"
+  }
+}
