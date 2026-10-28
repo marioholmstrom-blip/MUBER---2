@@ -1,0 +1,10 @@
+version: 1
+frontend:
+  phases:
+    build:
+      commands:
+        - node scripts/build-public-site.mjs
+  artifacts:
+    baseDirectory: web-dist
+    files:
+      - '**/*'
