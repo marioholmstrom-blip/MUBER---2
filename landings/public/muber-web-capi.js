@@ -1,7 +1,7 @@
 (() => {
-  const endpoint = document.currentScript?.dataset.endpoint;
+  const endpoint = "https://oudzgknptlwooqohgual.supabase.co/functions/v1/muber-web-capi";
   const path = location.pathname.replace(/\/+$/, "") || "/";
-  if (!endpoint || !new Set(["/", "/usuarios", "/choferes"]).has(path)) return;
+  if (!new Set(["/", "/usuarios", "/choferes"]).has(path)) return;
   if (!crypto.randomUUID) return;
 
   fetch(endpoint, {

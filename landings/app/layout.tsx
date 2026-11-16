@@ -32,7 +32,6 @@ export default function RootLayout({
         <script
           defer
           src="/muber-web-capi.js"
-          data-endpoint={process.env.NEXT_PUBLIC_MUBER_CAPI_ENDPOINT || ''}
         />
       </body>
     </html>
